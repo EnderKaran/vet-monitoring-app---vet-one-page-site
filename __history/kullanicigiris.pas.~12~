@@ -1,0 +1,56 @@
+unit kullanicigiris;
+
+interface
+
+uses
+  Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
+  Dialogs, StdCtrls, Grids, DBGrids, ExtCtrls, DB, DBAccess, MyAccess, MemDS;
+
+type
+  TForm1 = class(TForm)
+    Label1: TLabel;
+    Label2: TLabel;
+    Edit1: TEdit;
+    Edit2: TEdit;
+    Label3: TLabel;
+    Panel1: TPanel;
+    DBGrid1: TDBGrid;
+    Button1: TButton;
+    Button2: TButton;
+    Button3: TButton;
+    MyConnection1: TMyConnection;
+    MyQuery1: TMyQuery;
+    MyDataSource1: TMyDataSource;
+    MyQuery1firma_kodu: TIntegerField;
+    MyQuery1firma_ad: TStringField;
+    procedure Button2Click(Sender: TObject);
+    procedure Button3Click(Sender: TObject);
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  Form1: TForm1;
+
+implementation
+
+{$R *.dfm}
+
+procedure TForm1.Button2Click(Sender: TObject);
+begin
+Application.Terminate;
+end;
+
+procedure TForm1.Button3Click(Sender: TObject);
+begin
+if (Edit1.Text) + (Edit2.Text) <>Null then
+begin
+   ShowMessage('Firma onayýný yapmanýz gerek!');
+
+end;
+
+end;
+
+end.

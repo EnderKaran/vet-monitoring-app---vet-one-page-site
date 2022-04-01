@@ -1,0 +1,359 @@
+object Form7: TForm7
+  Left = 0
+  Top = 0
+  Caption = 'Form7'
+  ClientHeight = 477
+  ClientWidth = 785
+  Color = clBtnFace
+  Font.Charset = DEFAULT_CHARSET
+  Font.Color = clWindowText
+  Font.Height = -11
+  Font.Name = 'Tahoma'
+  Font.Style = []
+  OldCreateOrder = False
+  PixelsPerInch = 96
+  TextHeight = 13
+  object Label3: TLabel
+    Left = 299
+    Top = 407
+    Width = 28
+    Height = 13
+    Caption = 'Adres'
+  end
+  object Label4: TLabel
+    Left = 302
+    Top = 380
+    Width = 17
+    Height = 13
+    Caption = #304'l'#231'e'
+  end
+  object Label5: TLabel
+    Left = 303
+    Top = 58
+    Width = 62
+    Height = 13
+    Caption = 'M'#252#351'teri Kodu'
+  end
+  object Label6: TLabel
+    Left = 303
+    Top = 95
+    Width = 53
+    Height = 13
+    Caption = 'M'#252#351'teri Ad'#305
+  end
+  object Label7: TLabel
+    Left = 303
+    Top = 127
+    Width = 70
+    Height = 13
+    Caption = 'M'#252#351'teri Soyad'#305
+  end
+  object Label8: TLabel
+    Left = 302
+    Top = 160
+    Width = 76
+    Height = 13
+    Caption = 'M'#252#351'teri Unvan'#305
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -11
+    Font.Name = 'Malgun Gothic'
+    Font.Style = []
+    ParentFont = False
+  end
+  object Label9: TLabel
+    Left = 302
+    Top = 207
+    Width = 55
+    Height = 13
+    Caption = 'Tc Kimlik No'
+  end
+  object Label10: TLabel
+    Left = 302
+    Top = 239
+    Width = 40
+    Height = 13
+    Caption = 'Vergi No'
+  end
+  object Label11: TLabel
+    Left = 302
+    Top = 271
+    Width = 52
+    Height = 13
+    Caption = 'Telefon No'
+  end
+  object Label12: TLabel
+    Left = 302
+    Top = 311
+    Width = 34
+    Height = 13
+    Caption = 'Fax No'
+  end
+  object Label13: TLabel
+    Left = 302
+    Top = 344
+    Width = 6
+    Height = 13
+    Caption = #304'l'
+  end
+  object Panel1: TPanel
+    Left = 0
+    Top = 0
+    Width = 785
+    Height = 41
+    Align = alTop
+    Color = clSkyBlue
+    ParentBackground = False
+    TabOrder = 0
+    ExplicitLeft = 368
+    ExplicitTop = 176
+    ExplicitWidth = 185
+    object Label1: TLabel
+      Left = 34
+      Top = 13
+      Width = 225
+      Height = 14
+      Caption = 'M'#252#351'teri Ekleme Silme G'#252'ncelleme B'#246'l'#252'm'#252
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -12
+      Font.Name = 'Tahoma'
+      Font.Style = []
+      ParentFont = False
+    end
+  end
+  object Panel2: TPanel
+    Left = 0
+    Top = 436
+    Width = 785
+    Height = 41
+    Align = alBottom
+    Color = clSkyBlue
+    ParentBackground = False
+    TabOrder = 1
+    ExplicitLeft = 408
+    ExplicitTop = 256
+    ExplicitWidth = 185
+    object Label2: TLabel
+      Left = 16
+      Top = 16
+      Width = 150
+      Height = 13
+      Caption = 'M'#252#351'teri Ara(M'#252#351'teri Kodu)'
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -11
+      Font.Name = 'Tahoma'
+      Font.Style = [fsBold]
+      ParentFont = False
+    end
+    object Edit1: TEdit
+      Left = 172
+      Top = 6
+      Width = 121
+      Height = 21
+      TabOrder = 0
+    end
+    object Button1: TButton
+      Left = 453
+      Top = 8
+      Width = 75
+      Height = 25
+      Caption = 'M'#252#351'teri Sil'
+      TabOrder = 1
+    end
+    object Button2: TButton
+      Left = 534
+      Top = 8
+      Width = 75
+      Height = 25
+      Caption = 'Yeni'
+      TabOrder = 2
+      OnClick = Button2Click
+    end
+    object Button3: TButton
+      Left = 615
+      Top = 8
+      Width = 75
+      Height = 25
+      Caption = 'D'#252'zenle'
+      TabOrder = 3
+    end
+    object Button4: TButton
+      Left = 696
+      Top = 8
+      Width = 75
+      Height = 25
+      Caption = 'Kapat'
+      TabOrder = 4
+      OnClick = Button4Click
+    end
+    object Button5: TButton
+      Left = 299
+      Top = 8
+      Width = 75
+      Height = 25
+      Caption = 'Ara'
+      TabOrder = 5
+    end
+  end
+  object DBGrid1: TDBGrid
+    Left = 0
+    Top = 41
+    Width = 281
+    Height = 395
+    Align = alLeft
+    DataSource = MyDataSource1
+    TabOrder = 2
+    TitleFont.Charset = DEFAULT_CHARSET
+    TitleFont.Color = clWindowText
+    TitleFont.Height = -11
+    TitleFont.Name = 'Tahoma'
+    TitleFont.Style = []
+  end
+  object Edit2: TEdit
+    Left = 384
+    Top = 58
+    Width = 121
+    Height = 21
+    TabOrder = 3
+  end
+  object Edit3: TEdit
+    Left = 384
+    Top = 92
+    Width = 353
+    Height = 21
+    TabOrder = 4
+  end
+  object Edit4: TEdit
+    Left = 384
+    Top = 124
+    Width = 353
+    Height = 21
+    TabOrder = 5
+  end
+  object Edit5: TEdit
+    Left = 384
+    Top = 156
+    Width = 353
+    Height = 26
+    TabOrder = 6
+  end
+  object Edit6: TEdit
+    Left = 384
+    Top = 204
+    Width = 121
+    Height = 21
+    TabOrder = 7
+  end
+  object Edit7: TEdit
+    Left = 384
+    Top = 236
+    Width = 121
+    Height = 21
+    TabOrder = 8
+  end
+  object Edit8: TEdit
+    Left = 384
+    Top = 268
+    Width = 121
+    Height = 21
+    TabOrder = 9
+  end
+  object Edit9: TEdit
+    Left = 384
+    Top = 308
+    Width = 121
+    Height = 21
+    TabOrder = 10
+  end
+  object Edit10: TEdit
+    Left = 384
+    Top = 341
+    Width = 209
+    Height = 21
+    TabOrder = 11
+  end
+  object Edit11: TEdit
+    Left = 384
+    Top = 377
+    Width = 209
+    Height = 21
+    TabOrder = 12
+  end
+  object Edit12: TEdit
+    Left = 384
+    Top = 404
+    Width = 209
+    Height = 21
+    TabOrder = 13
+  end
+  object MyConnection1: TMyConnection
+    Database = 'musteri'
+    Username = 'root'
+    Password = 'ender16'
+    Server = 'localhost'
+    Connected = True
+    Left = 632
+    Top = 224
+  end
+  object MyDataSource1: TMyDataSource
+    DataSet = MyQuery1
+    Left = 640
+    Top = 304
+  end
+  object MyQuery1: TMyQuery
+    Connection = MyConnection1
+    SQL.Strings = (
+      'select * from musteri_islemleri')
+    Active = True
+    Left = 712
+    Top = 232
+    object MyQuery1musteri_kodu: TIntegerField
+      FieldName = 'musteri_kodu'
+      Origin = 'musteri_islemleri.musteri_kodu'
+    end
+    object MyQuery1musteri_adi: TStringField
+      FieldName = 'musteri_adi'
+      Origin = 'musteri_islemleri.musteri_adi'
+      Size = 50
+    end
+    object MyQuery1musteri_soyadi: TStringField
+      FieldName = 'musteri_soyadi'
+      Origin = 'musteri_islemleri.musteri_soyadi'
+      Size = 50
+    end
+    object MyQuery1musteri_unvan: TStringField
+      FieldName = 'musteri_unvan'
+      Origin = 'musteri_islemleri.musteri_unvan'
+      Size = 50
+    end
+    object MyQuery1kimlik: TIntegerField
+      FieldName = 'kimlik'
+      Origin = 'musteri_islemleri.kimlik'
+    end
+    object MyQuery1vergi_no: TIntegerField
+      FieldName = 'vergi_no'
+      Origin = 'musteri_islemleri.vergi_no'
+    end
+    object MyQuery1telefon_no: TIntegerField
+      FieldName = 'telefon_no'
+      Origin = 'musteri_islemleri.telefon_no'
+    end
+    object MyQuery1il: TStringField
+      FieldName = 'il'
+      Origin = 'musteri_islemleri.il'
+      Size = 50
+    end
+    object MyQuery1ilce: TStringField
+      FieldName = 'ilce'
+      Origin = 'musteri_islemleri.ilce'
+      Size = 50
+    end
+    object MyQuery1adres: TStringField
+      FieldName = 'adres'
+      Origin = 'musteri_islemleri.adres'
+      Size = 50
+    end
+  end
+end

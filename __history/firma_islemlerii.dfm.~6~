@@ -1,0 +1,455 @@
+﻿object Form3: TForm3
+  Left = 0
+  Top = 0
+  Caption = 'Firma '#304#351'lemleri'
+  ClientHeight = 541
+  ClientWidth = 483
+  Color = clBtnFace
+  Font.Charset = DEFAULT_CHARSET
+  Font.Color = clWindowText
+  Font.Height = -11
+  Font.Name = 'Tahoma'
+  Font.Style = []
+  OldCreateOrder = False
+  PixelsPerInch = 96
+  TextHeight = 13
+  object Label10: TLabel
+    Left = 24
+    Top = 424
+    Width = 17
+    Height = 13
+    Caption = #304'l'#231'e'
+  end
+  object Label9: TLabel
+    Left = 24
+    Top = 392
+    Width = 6
+    Height = 13
+    Caption = #304'l'
+  end
+  object Label8: TLabel
+    Left = 24
+    Top = 320
+    Width = 28
+    Height = 13
+    Caption = 'Adres'
+  end
+  object Label7: TLabel
+    Left = 24
+    Top = 280
+    Width = 34
+    Height = 13
+    Caption = 'Fax No'
+  end
+  object Label6: TLabel
+    Left = 24
+    Top = 240
+    Width = 52
+    Height = 13
+    Caption = 'Telefon No'
+  end
+  object Label5: TLabel
+    Left = 24
+    Top = 203
+    Width = 67
+    Height = 13
+    Caption = 'Vergi Numar'#305's'#305
+  end
+  object Label4: TLabel
+    Left = 24
+    Top = 168
+    Width = 59
+    Height = 13
+    Caption = 'Vergi Dairesi'
+  end
+  object Label3: TLabel
+    Left = 24
+    Top = 128
+    Width = 81
+    Height = 13
+    Caption = 'Firma A'#231#305'l'#305#351' Tarihi'
+  end
+  object Label2: TLabel
+    Left = 24
+    Top = 63
+    Width = 44
+    Height = 13
+    Caption = 'Firma Ad'#305
+  end
+  object Label1: TLabel
+    Left = 24
+    Top = 27
+    Width = 53
+    Height = 13
+    Caption = 'Firma Kodu'
+  end
+  object Panel1: TPanel
+    Left = 0
+    Top = 500
+    Width = 483
+    Height = 41
+    Align = alBottom
+    Color = clSkyBlue
+    ParentBackground = False
+    TabOrder = 0
+    ExplicitTop = 491
+    ExplicitWidth = 431
+    object Button1: TButton
+      Left = 229
+      Top = 8
+      Width = 75
+      Height = 25
+      Caption = 'Kaydet'
+      TabOrder = 0
+      OnClick = Button1Click
+    end
+    object Button2: TButton
+      Left = 396
+      Top = 8
+      Width = 75
+      Height = 25
+      Caption = 'Kapat'
+      TabOrder = 1
+      OnClick = Button2Click
+    end
+    object Button3: TButton
+      Left = 310
+      Top = 8
+      Width = 75
+      Height = 25
+      Caption = 'Yazd'#305'r'
+      TabOrder = 2
+      OnClick = Button3Click
+    end
+  end
+  object Edit10: TEdit
+    Left = 112
+    Top = 421
+    Width = 273
+    Height = 21
+    TabOrder = 1
+  end
+  object Edit9: TEdit
+    Left = 112
+    Top = 384
+    Width = 273
+    Height = 21
+    TabOrder = 2
+  end
+  object Edit8: TEdit
+    Left = 112
+    Top = 317
+    Width = 273
+    Height = 21
+    TabOrder = 3
+  end
+  object Edit7: TEdit
+    Left = 112
+    Top = 277
+    Width = 121
+    Height = 21
+    TabOrder = 4
+  end
+  object Edit6: TEdit
+    Left = 112
+    Top = 237
+    Width = 121
+    Height = 21
+    TabOrder = 5
+  end
+  object Edit5: TEdit
+    Left = 112
+    Top = 200
+    Width = 121
+    Height = 21
+    TabOrder = 6
+  end
+  object Edit4: TEdit
+    Left = 112
+    Top = 165
+    Width = 273
+    Height = 21
+    TabOrder = 7
+  end
+  object Edit3: TEdit
+    Left = 112
+    Top = 125
+    Width = 121
+    Height = 21
+    TabOrder = 8
+  end
+  object Edit2: TEdit
+    Left = 112
+    Top = 60
+    Width = 273
+    Height = 21
+    TabOrder = 9
+  end
+  object Edit1: TEdit
+    Left = 112
+    Top = 24
+    Width = 121
+    Height = 21
+    TabOrder = 10
+  end
+  object Firma_2Query1: TMyQuery
+    Connection = Firma_2Connection1
+    SQL.Strings = (
+      'select * from firma_2')
+    Left = 280
+    Top = 440
+    object Firma_2Query1firma_Kodu: TIntegerField
+      FieldName = 'firma_Kodu'
+    end
+    object Firma_2Query1firma_ad: TStringField
+      FieldName = 'firma_ad'
+      Size = 50
+    end
+    object Firma_2Query1firma_acilis: TDateField
+      FieldName = 'firma_acilis'
+    end
+    object Firma_2Query1vergi_dairesi: TStringField
+      FieldName = 'vergi_dairesi'
+      Size = 50
+    end
+    object Firma_2Query1vergi_numarisi: TIntegerField
+      FieldName = 'vergi_numarisi'
+    end
+    object Firma_2Query1telefon_no: TIntegerField
+      FieldName = 'telefon_no'
+    end
+    object Firma_2Query1fax_no: TIntegerField
+      FieldName = 'fax_no'
+    end
+    object Firma_2Query1adres: TStringField
+      FieldName = 'adres'
+      Size = 50
+    end
+    object Firma_2Query1il: TStringField
+      FieldName = 'il'
+      Size = 50
+    end
+    object Firma_2Query1ilçe: TStringField
+      FieldName = 'il'#231'e'
+      Size = 50
+    end
+  end
+  object Firma_2Connection1: TMyConnection
+    Database = 'musteri'
+    Username = 'root'
+    Password = 'ender16'
+    Server = 'localhost'
+    Connected = True
+    Left = 176
+    Top = 440
+  end
+  object frxReport1: TfrxReport
+    Version = '4.8.27'
+    DotMatrixReport = False
+    IniFile = '\Software\Fast Reports'
+    PreviewOptions.Buttons = [pbPrint, pbLoad, pbSave, pbExport, pbZoom, pbFind, pbOutline, pbPageSetup, pbTools, pbEdit, pbNavigator, pbExportQuick]
+    PreviewOptions.Zoom = 1.000000000000000000
+    PrintOptions.Printer = 'Default'
+    PrintOptions.PrintOnSheet = 0
+    ReportOptions.CreateDate = 44629.565777222230000000
+    ReportOptions.LastChange = 44629.568677256950000000
+    ScriptLanguage = 'PascalScript'
+    ScriptText.Strings = (
+      'begin'
+      ''
+      'end.')
+    Left = 424
+    Top = 352
+    Datasets = <
+      item
+        DataSet = frxDBDataset1
+        DataSetName = 'frxDBDataset1'
+      end>
+    Variables = <>
+    Style = <>
+    object Data: TfrxDataPage
+      Height = 1000.000000000000000000
+      Width = 1000.000000000000000000
+    end
+    object Page1: TfrxReportPage
+      PaperWidth = 210.000000000000000000
+      PaperHeight = 297.000000000000000000
+      PaperSize = 9
+      LeftMargin = 10.000000000000000000
+      RightMargin = 10.000000000000000000
+      TopMargin = 10.000000000000000000
+      BottomMargin = 10.000000000000000000
+      object ReportTitle1: TfrxReportTitle
+        Height = 22.677180000000000000
+        Top = 18.897650000000000000
+        Width = 718.110700000000000000
+        object Date: TfrxMemoView
+          Left = 634.961040000000000000
+          Top = 3.779530000000000000
+          Width = 79.370130000000000000
+          Height = 18.897650000000000000
+          ShowHint = False
+          Memo.UTF8W = (
+            '[Date]')
+        end
+        object Page: TfrxMemoView
+          Left = 3.779530000000000000
+          Width = 79.370130000000000000
+          Height = 18.897650000000000000
+          ShowHint = False
+          Memo.UTF8W = (
+            '[Page]')
+        end
+      end
+      object MasterData1: TfrxMasterData
+        Height = 109.606370000000000000
+        Top = 102.047310000000000000
+        Width = 718.110700000000000000
+        DataSet = frxDBDataset1
+        DataSetName = 'frxDBDataset1'
+        RowCount = 0
+        object frxDBDataset1firma_Kodu: TfrxMemoView
+          Left = 15.118120000000000000
+          Top = 11.338590000000000000
+          Width = 200.315090000000000000
+          Height = 18.897650000000000000
+          ShowHint = False
+          DataField = 'firma_Kodu'
+          DataSet = frxDBDataset1
+          DataSetName = 'frxDBDataset1'
+          Memo.UTF8W = (
+            '[frxDBDataset1."firma_Kodu"]')
+        end
+        object frxDBDataset1firma_ad: TfrxMemoView
+          Left = 15.118120000000000000
+          Top = 49.133890000000000000
+          Width = 400.630180000000000000
+          Height = 18.897650000000000000
+          ShowHint = False
+          DataField = 'firma_ad'
+          DataSet = frxDBDataset1
+          DataSetName = 'frxDBDataset1'
+          Memo.UTF8W = (
+            '[frxDBDataset1."firma_ad"]')
+        end
+        object frxDBDataset1firma_acilis: TfrxMemoView
+          Left = 15.118120000000000000
+          Top = 83.149660000000000000
+          Width = 196.535560000000000000
+          Height = 18.897650000000000000
+          ShowHint = False
+          DataField = 'firma_acilis'
+          DataSet = frxDBDataset1
+          DataSetName = 'frxDBDataset1'
+          Memo.UTF8W = (
+            '[frxDBDataset1."firma_acilis"]')
+        end
+      end
+      object DetailData1: TfrxDetailData
+        Height = 245.669450000000000000
+        Top = 234.330860000000000000
+        Width = 718.110700000000000000
+        DataSet = frxDBDataset1
+        DataSetName = 'frxDBDataset1'
+        RowCount = 0
+        object frxDBDataset1vergi_dairesi: TfrxMemoView
+          Left = 11.338590000000000000
+          Top = 11.338590000000000000
+          Width = 400.630180000000000000
+          Height = 18.897650000000000000
+          ShowHint = False
+          DataField = 'vergi_dairesi'
+          DataSet = frxDBDataset1
+          DataSetName = 'frxDBDataset1'
+          Memo.UTF8W = (
+            '[frxDBDataset1."vergi_dairesi"]')
+        end
+        object frxDBDataset1vergi_numarisi: TfrxMemoView
+          Left = 11.338590000000000000
+          Top = 41.574830000000000000
+          Width = 219.212740000000000000
+          Height = 18.897650000000000000
+          ShowHint = False
+          DataField = 'vergi_numarisi'
+          DataSet = frxDBDataset1
+          DataSetName = 'frxDBDataset1'
+          Memo.UTF8W = (
+            '[frxDBDataset1."vergi_numarisi"]')
+        end
+        object frxDBDataset1telefon_no: TfrxMemoView
+          Left = 15.118120000000000000
+          Top = 71.811070000000000000
+          Width = 200.315090000000000000
+          Height = 18.897650000000000000
+          ShowHint = False
+          DataField = 'telefon_no'
+          DataSet = frxDBDataset1
+          DataSetName = 'frxDBDataset1'
+          Memo.UTF8W = (
+            '[frxDBDataset1."telefon_no"]')
+        end
+        object frxDBDataset1fax_no: TfrxMemoView
+          Left = 11.338590000000000000
+          Top = 105.826840000000000000
+          Width = 207.874150000000000000
+          Height = 18.897650000000000000
+          ShowHint = False
+          DataField = 'fax_no'
+          DataSet = frxDBDataset1
+          DataSetName = 'frxDBDataset1'
+          Memo.UTF8W = (
+            '[frxDBDataset1."fax_no"]')
+        end
+        object frxDBDataset1adres: TfrxMemoView
+          Left = 11.338590000000000000
+          Top = 147.401670000000000000
+          Width = 400.630180000000000000
+          Height = 18.897650000000000000
+          ShowHint = False
+          DataField = 'adres'
+          DataSet = frxDBDataset1
+          DataSetName = 'frxDBDataset1'
+          Memo.UTF8W = (
+            '[frxDBDataset1."adres"]')
+        end
+        object frxDBDataset1il: TfrxMemoView
+          Left = 7.559060000000000000
+          Top = 181.417440000000000000
+          Width = 400.630180000000000000
+          Height = 18.897650000000000000
+          ShowHint = False
+          DataField = 'il'
+          DataSet = frxDBDataset1
+          DataSetName = 'frxDBDataset1'
+          Memo.UTF8W = (
+            '[frxDBDataset1."il"]')
+        end
+        object frxDBDataset1ile: TfrxMemoView
+          Left = 7.559060000000000000
+          Top = 211.653680000000000000
+          Width = 400.630180000000000000
+          Height = 18.897650000000000000
+          ShowHint = False
+          DataField = 'il'#231'e'
+          DataSet = frxDBDataset1
+          DataSetName = 'frxDBDataset1'
+          Memo.UTF8W = (
+            '[frxDBDataset1."il'#231'e"]')
+        end
+      end
+      object PageFooter1: TfrxPageFooter
+        Height = 22.677180000000000000
+        Top = 540.472790000000000000
+        Width = 718.110700000000000000
+      end
+    end
+  end
+  object frxDBDataset1: TfrxDBDataset
+    UserName = 'frxDBDataset1'
+    CloseDataSource = False
+    DataSet = Firma_2Query1
+    BCDToCurrency = False
+    Left = 424
+    Top = 424
+  end
+end

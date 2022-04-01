@@ -1,0 +1,142 @@
+object Form2: TForm2
+  Left = 0
+  Top = 0
+  Caption = 'Firma Kay'#305't'
+  ClientHeight = 401
+  ClientWidth = 635
+  Color = clBtnFace
+  Font.Charset = DEFAULT_CHARSET
+  Font.Color = clWindowText
+  Font.Height = -11
+  Font.Name = 'Tahoma'
+  Font.Style = []
+  OldCreateOrder = False
+  PixelsPerInch = 96
+  TextHeight = 13
+  object Label1: TLabel
+    Left = 326
+    Top = 32
+    Width = 17
+    Height = 18
+    Caption = 'Ad'
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -15
+    Font.Name = 'Tahoma'
+    Font.Style = []
+    ParentFont = False
+  end
+  object Label2: TLabel
+    Left = 40
+    Top = 88
+    Width = 31
+    Height = 18
+    Caption = #350'ehir'
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -15
+    Font.Name = 'Tahoma'
+    Font.Style = []
+    ParentFont = False
+  end
+  object Label3: TLabel
+    Left = 40
+    Top = 32
+    Width = 59
+    Height = 18
+    Caption = 'Firma No'
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -15
+    Font.Name = 'Tahoma'
+    Font.Style = []
+    ParentFont = False
+  end
+  object Label4: TLabel
+    Left = 326
+    Top = 92
+    Width = 53
+    Height = 18
+    Caption = 'Faks No'
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -15
+    Font.Name = 'Tahoma'
+    Font.Style = []
+    ParentFont = False
+  end
+  object Label5: TLabel
+    Left = 40
+    Top = 148
+    Width = 55
+    Height = 18
+    Caption = 'Vergi No'
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -15
+    Font.Name = 'Tahoma'
+    Font.Style = []
+    ParentFont = False
+  end
+  object Label6: TLabel
+    Left = 326
+    Top = 148
+    Width = 92
+    Height = 18
+    Caption = #350'irket Durumu'
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -15
+    Font.Name = 'Tahoma'
+    Font.Style = []
+    ParentFont = False
+  end
+  object Panel1: TPanel
+    Left = 0
+    Top = 360
+    Width = 635
+    Height = 41
+    Align = alBottom
+    TabOrder = 0
+    ExplicitLeft = 104
+    ExplicitTop = 224
+    ExplicitWidth = 185
+    object Button1: TButton
+      Left = 343
+      Top = 6
+      Width = 75
+      Height = 25
+      Caption = 'Kay'#305't'
+      TabOrder = 0
+    end
+    object Button2: TButton
+      Left = 440
+      Top = 6
+      Width = 75
+      Height = 25
+      Caption = 'Yazd'#305'r'
+      TabOrder = 1
+    end
+    object Button3: TButton
+      Left = 536
+      Top = 6
+      Width = 75
+      Height = 25
+      Caption = #199#305'k'#305#351
+      TabOrder = 2
+    end
+  end
+  object DBGrid1: TDBGrid
+    Left = 0
+    Top = 240
+    Width = 635
+    Height = 120
+    Align = alBottom
+    TabOrder = 1
+    TitleFont.Charset = DEFAULT_CHARSET
+    TitleFont.Color = clWindowText
+    TitleFont.Height = -11
+    TitleFont.Name = 'Tahoma'
+    TitleFont.Style = []
+  end
+end

@@ -1,0 +1,105 @@
+object Form22: TForm22
+  Left = 0
+  Top = 0
+  Caption = 'B'#252't'#252'n Tablolar'#305' G'#246'ster'
+  ClientHeight = 300
+  ClientWidth = 635
+  Color = clBtnFace
+  Font.Charset = DEFAULT_CHARSET
+  Font.Color = clWindowText
+  Font.Height = -11
+  Font.Name = 'Tahoma'
+  Font.Style = []
+  OldCreateOrder = False
+  OnCreate = FormCreate
+  PixelsPerInch = 96
+  TextHeight = 13
+  object cxGrid1: TcxGrid
+    Left = 16
+    Top = 8
+    Width = 601
+    Height = 209
+    TabOrder = 0
+    object cxGrid1DBTableView1: TcxGridDBTableView
+      NavigatorButtons.ConfirmDelete = False
+      DataController.DataSource = MyDataSource1
+      DataController.Summary.DefaultGroupSummaryItems = <>
+      DataController.Summary.FooterSummaryItems = <>
+      DataController.Summary.SummaryGroups = <>
+    end
+    object cxGrid1Level1: TcxGridLevel
+      GridView = cxGrid1DBTableView1
+    end
+  end
+  object MyDataSource1: TMyDataSource
+    DataSet = MyQuery1
+    Left = 520
+    Top = 232
+  end
+  object MyQuery1: TMyQuery
+    Connection = DataModule1.musteriConnection1
+    SQL.Strings = (
+      
+        'SELECT musterii.adi, hayvan.cinsi,hayvan.hastalik_durumu,hayvan.' +
+        'yasi,hayvan.asi_durumu,calisan.adi,calisan.soyadi,calisan.yas,ca' +
+        'lisan.adres,calisan.telefon_no,calisan.sigorta_no,calisan.cinsiy' +
+        'et,calisan.ehliyet_durumu,calisan.engellilik_durumu FROM musteri' +
+        'i'
+      'INNER JOIN hayvan ON musterii.`no` = hayvan.numara '
+      'JOIN calisan ON calisan.`no`= musterii.`no`')
+    Left = 352
+    Top = 232
+    object MyQuery1adi: TStringField
+      FieldName = 'adi'
+      Size = 50
+    end
+    object MyQuery1cinsi: TStringField
+      FieldName = 'cinsi'
+      Size = 50
+    end
+    object MyQuery1hastalik_durumu: TStringField
+      FieldName = 'hastalik_durumu'
+      Size = 50
+    end
+    object MyQuery1yasi: TIntegerField
+      FieldName = 'yasi'
+    end
+    object MyQuery1asi_durumu: TStringField
+      FieldName = 'asi_durumu'
+      Size = 50
+    end
+    object MyQuery1adi_1: TStringField
+      FieldName = 'adi_1'
+      Size = 50
+    end
+    object MyQuery1soyadi: TStringField
+      FieldName = 'soyadi'
+      Size = 50
+    end
+    object MyQuery1yas: TIntegerField
+      FieldName = 'yas'
+    end
+    object MyQuery1adres: TStringField
+      FieldName = 'adres'
+      Size = 50
+    end
+    object MyQuery1telefon_no: TIntegerField
+      FieldName = 'telefon_no'
+    end
+    object MyQuery1sigorta_no: TIntegerField
+      FieldName = 'sigorta_no'
+    end
+    object MyQuery1cinsiyet: TStringField
+      FieldName = 'cinsiyet'
+      Size = 50
+    end
+    object MyQuery1ehliyet_durumu: TStringField
+      FieldName = 'ehliyet_durumu'
+      Size = 50
+    end
+    object MyQuery1engellilik_durumu: TStringField
+      FieldName = 'engellilik_durumu'
+      Size = 50
+    end
+  end
+end

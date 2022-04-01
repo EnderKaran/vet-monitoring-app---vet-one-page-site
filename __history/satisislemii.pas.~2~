@@ -1,0 +1,31 @@
+unit satisislemii;
+
+interface
+
+uses
+  Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
+  Dialogs, DB, DBAccess, MyAccess, StdCtrls, Grids, DBGrids;
+
+type
+  TForm6 = class(TForm)
+    Label1: TLabel;
+    DBGrid1: TDBGrid;
+    Edit1: TEdit;
+    Button1: TButton;
+    Button2: TButton;
+    Button4: TButton;
+    MyDataSource1: TMyDataSource;
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  Form6: TForm6;
+
+implementation
+
+{$R *.dfm}
+
+end.

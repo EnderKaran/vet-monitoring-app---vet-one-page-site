@@ -1,0 +1,79 @@
+object Form17: TForm17
+  Left = 0
+  Top = 0
+  Caption = 'T'#252'm Liste'
+  ClientHeight = 300
+  ClientWidth = 635
+  Color = clBtnFace
+  Font.Charset = DEFAULT_CHARSET
+  Font.Color = clWindowText
+  Font.Height = -11
+  Font.Name = 'Tahoma'
+  Font.Style = []
+  OldCreateOrder = False
+  OnCreate = FormCreate
+  PixelsPerInch = 96
+  TextHeight = 13
+  object cxGrid1: TcxGrid
+    Left = 0
+    Top = 0
+    Width = 635
+    Height = 257
+    Align = alTop
+    TabOrder = 0
+    object cxGrid1DBTableView1: TcxGridDBTableView
+      NavigatorButtons.ConfirmDelete = False
+      DataController.DataSource = MyDataSource1
+      DataController.Summary.DefaultGroupSummaryItems = <>
+      DataController.Summary.FooterSummaryItems = <>
+      DataController.Summary.SummaryGroups = <>
+      object cxGrid1DBTableView1no: TcxGridDBColumn
+        DataBinding.FieldName = 'no'
+      end
+      object cxGrid1DBTableView1adi: TcxGridDBColumn
+        DataBinding.FieldName = 'adi'
+      end
+      object cxGrid1DBTableView1soyadi: TcxGridDBColumn
+        DataBinding.FieldName = 'soyadi'
+      end
+      object cxGrid1DBTableView1yas: TcxGridDBColumn
+        DataBinding.FieldName = 'yas'
+      end
+      object cxGrid1DBTableView1adres: TcxGridDBColumn
+        DataBinding.FieldName = 'adres'
+      end
+      object cxGrid1DBTableView1telefon_no: TcxGridDBColumn
+        DataBinding.FieldName = 'telefon_no'
+      end
+      object cxGrid1DBTableView1sigorta_no: TcxGridDBColumn
+        DataBinding.FieldName = 'sigorta_no'
+      end
+      object cxGrid1DBTableView1cinsiyet: TcxGridDBColumn
+        DataBinding.FieldName = 'cinsiyet'
+      end
+      object cxGrid1DBTableView1ehliyet_durumu: TcxGridDBColumn
+        DataBinding.FieldName = 'ehliyet_durumu'
+      end
+      object cxGrid1DBTableView1engellilik_durumu: TcxGridDBColumn
+        DataBinding.FieldName = 'engellilik_durumu'
+      end
+    end
+    object cxGrid1Level1: TcxGridLevel
+      GridView = cxGrid1DBTableView1
+    end
+  end
+  object cxButton1: TcxButton
+    Left = 544
+    Top = 267
+    Width = 75
+    Height = 25
+    Caption = #199#305'k'#305#351
+    TabOrder = 1
+    OnClick = cxButton1Click
+  end
+  object MyDataSource1: TMyDataSource
+    DataSet = DataModule1.calisanQuery1
+    Left = 384
+    Top = 248
+  end
+end

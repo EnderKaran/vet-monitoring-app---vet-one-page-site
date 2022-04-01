@@ -1,0 +1,125 @@
+unit Unit2;
+
+interface
+
+uses
+  Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
+  Dialogs, StdCtrls,ShellAPI,DateUtils;
+
+type
+  TForm2 = class(TForm)
+    Button1: TButton;
+    Button2: TButton;
+    OpenDialog1: TOpenDialog;
+    procedure Button1Click(Sender: TObject);
+    procedure Button2Click(Sender: TObject);
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  Form2: TForm2;
+   owner:tcomponent;
+implementation
+
+{$R *.dfm}
+ function FileManager(xSourcePath, xDestPath, xPara: string): Boolean;
+var
+  PFileMsg: TSHFileOpStruct;
+  mNowPath: string;
+begin
+  Result := False;
+  FillChar(PFileMsg, sizeof(PFileMsg), #0);
+  if pos('.', xpara) = 0 then
+    exit;
+  mNowPath := GetCurrentDir;
+  if xSourcePath <> '' then
+    if not DirectoryExists(xSourcePath) then
+    begin
+      showmessage('The source path does not exist !');
+      exit;
+    end;
+  if xDestPath <> '' then
+    if not DirectoryExists(xDestPath) then
+    begin
+      showmessage('The destination path does not exist !');
+      exit;
+    end;
+  if SetCurrentDirectory(Pchar(xSourcePath)) then
+  begin
+    with PFileMsg do
+    begin
+      if Owner is TForm then
+        Wnd := TForm(Owner).Handle
+      else
+        Wnd := Application.Handle;
+      if xDestPath <> '' then
+      begin
+        wFunc := FO_COPY;
+        PTo := pChar(xDestPath);
+        fFlags := FOF_MULTIDESTFILES + FOF_NOCONFIRMATION;
+      end
+      else
+      begin
+        wFunc := FO_DELETE;
+        fFlags := FOF_ALLOWUNDO + FOF_NOCONFIRMATION;
+      end;
+      pFrom := PChar(xPara + #0#0);
+    end;
+    SHFileOperation(PFileMsg);
+    SetCurrentDirectory(Pchar(mNowPath));
+    Application.ProcessMessages;
+    Result := True;
+  end;
+end;
+
+
+ function CopyFileOrFolder(Source, Destination : string) :
+Boolean;
+var
+SHFileOp : TSHFileOpStruct;
+Error : Integer;
+Aborted : Boolean;
+begin
+FillChar(SHFileOp,SizeOf(SHFileOp),0);
+SHFileOp.Wnd:= Application.Handle;
+SHFileOp.wFunc:= FO_COPY;
+SHFileOp.pFrom:= PChar(Source + #0);
+SHFileOp.pTo:= PChar(Destination +#0);
+SHFileOp.fFlags:= FOF_ALLOWUNDO;
+//fFlags := FOF_ALLOWUNO or FOF_SIMPLEPROGRESS;
+Error:= SHFileOperation(SHFileOp);
+Aborted:= (Error = 117);
+if Aborted then Error:= 0;
+Result:= (Error = 0) and not Aborted;
+end;
+
+
+
+
+procedure TForm2.Button1Click(Sender: TObject);
+begin
+if FileManager('C:\Users\Admin\Desktop\', 'C:\dosya', '*.*') then
+         begin
+            ShowMessage('Veriler Yedeklendi');
+         end;
+end;
+
+procedure TForm2.Button2Click(Sender: TObject);
+    var
+      dosya:TOpenDialog;
+ begin
+if DeleteFile('dosya') then
+
+  Application.MessageBox('Dosyayý gerçekten silmek istiyormusunuz?','Soru', MB_OKCANCEL or MB_ICONQUESTION);
+
+  if OpenDialog1.Execute then
+    begin
+
+    end;
+
+
+end;
+end.

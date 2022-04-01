@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- Css -->
+    <link rel="stylesheet" href="style.scss">
+    <!-- Bootstrap Css -->
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+    <title>Veterinary Site</title>
+</head>
+<body style="height: 2100px">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="#"><i class="fa-solid fa-bone text-primary"></i></a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+      
+        <div class="collapse navbar-collapse "  id="navbarSupportedContent">
+          <ul class="navbar-nav mr-auto ">
+            <li class="nav-item active">
+              <a class="nav-link" href="#">Anasayfa <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Veterinerler
+            </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">Soru & Cevap
+              </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Blog
+              </a>
+              </li>
+           
+          </ul>
+          <form class="form-inline my-2 my-lg-0">
+            <button class="btn btn-outline-primary my-2 my-sm-0 mr-2" type="submit">Giriş Yap</button>
+            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Kayıt Ol</button>
+          </form>
+        </div>
+      </nav>
+
+      <div class="container m-auto max-w-3xl justify-center py-20 pb-12 md:pb-28">
+        <div class="box p-5">
+            <h1 class="text-2xl md:text-5xl font-bold text-center mb-10">En yakın veteriner kliniğini, petshop veya barınağı bul.</h1>
+            <form class="pt-3 " action="">
+                <input class="form-control" type="text" placeholder="Hemen klinik/petshop ara...">
+            </form>
+        </div>
+      </div>
+
+      <!-- Cards  -->
+      <div class="cards mt-5">
+          <div class="container">
+            <div class=">
+                <div class="container">
+                    
+                  <div class="row hidden-md-up">
+                    <div class="col-md-4">
+                      <div class="card p-3 mb-2 gradient-border border-danger">
+                        <div class="card-block">
+                            <i class="fa-solid fa-map-pin d-flex justify-content-center pb-2" style="font-size: 24px; color: rgb(222, 178, 66);"></i>
+                          <h4 class="card-title"> Veteriner Kliniği Araştırın</h4>                         
+                          <p class="card-text p-y-1">Veteriner klinikleri hakkında bilgi, fotoğraf ve diğer kullanıcıların bıraktığı görüşleri inceleyin.</p>
+                          
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-md-4">
+                      <div class="card p-3 mb-2 border-danger"">
+                        <div class="card-block">
+                            <i class="fa-solid fa-calendar-check d-flex justify-content-center pb-2" style="font-size: 24px; color: rgb(222, 178, 66);"></i>
+                          <h4 class="card-title">Online Randevu Sistemi</h4>
+                          <p class="card-text p-y-1">Bulduğunuz veteriner kliniğinden kolayca randevu alın ve görüş bırakın.</p>
+                          
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-md-4">
+                      <div class="card p-3 border-danger">
+                        <div class="card-block">
+                            <i class="fa-solid fa-question d-flex justify-content-center pb-2" style="font-size: 24px; color: rgb(222, 178, 66);"></i>
+                          <h4 class="card-title">Soru Sorun!</h4>
+                          <p class="card-text p-y-1">Veteriner kliniklerine ve diğer hayvan sahiplerine soru sorun, bilgi sahibi kişiler tarafından yanıtlansın..</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div><br>
+                  <div class="row">
+                    <div class="col-md-4">
+                      <div class="card p-3 mb-2 border-danger">
+                        <div class="card-block">
+                            <i class="fa-solid fa-message d-flex justify-content-center pb-2" style="font-size: 24px; color: rgb(222, 178, 66);"></i>
+                          <h4 class="card-title">Klinikler İçin Görüş Bırakın</h4>
+                          
+                          <p class="card-text p-y-1">Hizmet aldığınız veteriner klinikleri hakkında görüş bırakın ve değerlendirmede bulunun.</p>
+                          
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-md-4">
+                      <div class="card p-3 mb-2 border-danger">
+                        <div class="card-block">
+                            <i class="fa-solid fa-house d-flex justify-content-center pb-2" style="font-size: 24px; color: rgb(222, 178, 66);"></i>
+                          <h4 class="card-title">Sahiplenin & Sahiplendirin</h4>
+                          
+                          <p class="card-text p-y-1">Yuva arayan dostlarımızı sahiplenin ya da evsiz dostlarımızı sahiplendirin.</p>
+                          
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-md-4">
+                      <div class="card p-3 border-danger">
+                        <div class="card-block">
+                            <i class="fa-solid fa-circle-info d-flex justify-content-center pb-2" style="font-size: 24px; color: rgb(222, 178, 66);"></i>
+                          <h4 class="card-title">Bilgi Sahibi Olun!</h4>
+                          
+                          <p class="card-text p-y-1">Hayvanseverler ve hayvanlar hakkında yazdığımız yazıları okuyun ve bilgi edinin</p>
+                          
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+          </div>
+      </div>
+
+      <div class="gallery">
+        <div class="container mt-5 ">
+            <h2 class="text-center pb-2">Çok Okunan Blog Yazıları</h2>
+            <div class="row justify-content-center">
+               
+                <div class="col-md-3">
+                   <div class="card zoom-shadow" style="width: 20reme;">
+                    <div class="inner">
+                        <img   src="/img/kedi-ve-kopeklerde-kirik-cikik-33.jpeg" class="card-img-top img-fluid" alt="...">
+
+                    </div>
+                    <div class="card-body text-center">
+                        <h5 class="card-title">Kedi ve Köpeklerde Kırık – Çıkık</h5>
+                        <p class="card-text">Siz de yolda yürürken ya da arabayla giderken gördüğünüz yaralı hayvanlara yardım eden insanlarda mısınız?  Ne yazık ki hayvanlarda görülen kırık – çıkık durumu insanlardan daha fazladır.</p>
+                        <a href="#" class="btn btn-success">Makaleyi Oku</a>
+                    </div>
+                   </div> 
+                </div>
+
+                <div class="col-md-3">
+                    <div class="card zoom-shadow" style="width: 20reme;">
+                     <div class="inner">
+                         <img  src="/img/kopegim-icin-dogru-mamayi-nasil-secebilirim-52.jpg" class="card-img-top img-fluid" alt="...">
+ 
+                     </div>
+                     <div class="card-body text-center">
+                         <h5 class="card-title">Köpeğim İçin Doğru Mamayı Nasıl Seçebilirim?</h5>
+                         <p class="card-text">Köpekler, kedilerin aksine, sıkı etoburlar değildir. Et, diyetlerinin çoğunluğunu oluştururken, evcil köpekler ayrıca tahıllardan, meyvelerden ve sebzelerden besin elde ederler. Bu et içermeyen gıdalar sadece dolgu maddesi değildir</p>
+                         <a href="#" class="btn btn-success">Makaleyi Oku</a>
+                     </div>
+                    </div> 
+                 </div>
+
+                 <div class="col-md-3">
+                    <div class="card zoom-shadow" style="width: 20reme;">
+                     <div class="inner">
+                         <img src="/img/sahipli-kedi-ve-kopeklere-kimlik-zorunlulugu-getiriliyor-76.jpg" class="card-img-top img-fluid" alt="...">
+    
+                     </div>
+                     <div class="card-body text-center">
+                         <h5 class="card-title">Sahipli Kedi ve Köpeklere Kimlik Zorunluluğu Getiriliyor</h5>
+                         <p class="card-text">etirilen yeni yönetmelikle, hayvanları etkileyen hastalıkları daha iyi kontrol altında tutmak ve evcil hayvanların bakım ve beslenmesinden hayvan sahiplerini sorumlu tutmak hedefleniyor.</p>
+                         <a href="#" class="btn btn-success">Makaleyi Oku</a>
+                     </div>
+                    </div> 
+                 </div>
+
+                 <div class="col-md-3">
+                    <div class="card zoom-shadow" style="width: 20reme;">
+                     <div class="inner">
+                         <img src="/img/japon-baliklarinin-bakimi-ve-beslenmesi-62.png" class="card-img-top img-fluid" alt="...">
+    
+                     </div>
+                     <div class="card-body text-center">
+                         <h5 class="card-title">Japon Balıklarının Bakımı ve Beslenmesi</h5>
+                         <p class="card-text">Japon balığı, insanlara ve bulunduğu ortama kolay uyum sağlayan bir balık türüdür. Canlı renkleriyle insanların ilgisini çeker ve balık beslemeye karar verildiğinde çoğu kişinin ilk tercih ettiği balık türü japon balığıdır. </p>
+                         <a href="#" class="btn btn-success">Makaleyi Oku</a>
+                     </div>
+                    </div> 
+                 </div>
+            </div>
+
+        </div>
+      </div>
+
+
+      <div class="images">
+        <div class="container mt-5">
+            <div class="row">
+                <div class="col-md-3 pb-3">
+                    <img class="img-fluid w-100" src="/img/istanbul.jpg" alt="">
+                </div>
+
+                <div class="col-md-3 pb-3">
+                    <img class="img-fluid w-100" src="/img/izmir.jpg" alt="">
+                </div>
+
+                <div class="col-md-3 pb-3">
+                    <img class="img-fluid w-100" src="/img/ankara.jpg" alt="">
+                </div>
+
+                <div class="col-md-3">
+                    <img class="img-fluid w-100" src="/img/antalya.jpg" alt="">
+                </div>
+
+                <div class="col-md-12 pt-2">
+                     <p>İstanbul Veteriner KlinikleriAnkara Veteriner Klinikleriİzmir Veteriner KlinikleriAntalya Veteriner KlinikleriAdana Veteriner KlinikleriMersin Veteriner KlinikleriBursa Veteriner KlinikleriNöbetçi Veterinerİstanbul Nöbetçi VeterinerAnkara Nöbetçi Veterinerİstanbul BarınaklarıTrabzon Nöbetçi Veterinerİzmir Barınaklarıİstanbul Barınaklarıİstanbul PetshopAnkara Petshop</p>
+                </div>
+            </div>
+        </div>
+      </div>
+
+      <div class="yazi">
+        <div class="container mt-5">
+            <div class="col-md-8 float-left">
+                <p>Bu hayattaki en iyi dostunuz kim diye sorsak ne cevap verirsiniz? Kedim ya da köpeğim dediğinizi duyar gibiyiz… <br> <br>
+
+                    Biz veterinersitesi olarak hem can dostlarımız hem de sizler için hayatı daha kolay hale getirmeye çalışıyoruz. Dostlarımızın acil ihtiyacı olabilecek her detayı tek bir çatı altında toplamak için çabalıyoruz. Size en yakın veteriner kliniklerini ve petshopları tek tıkla ve kolaylıkla listeleyip ulaşabilmeniz için tüm içeriklerimizi güncel tutuyoruz. Aynı zamanda kafanıza takılan soruları sorma imkanı sağlıyoruz. Veteriner kliniklerinden kolayca randevu alabilme imkanı sunmaktayız. Barınaktaki dostlarımızı da unutmuyor, onlara kolayca erişebilmeniz için tüm Türkiye’deki barınakların iletişim bilgilerini de sürekli güncel tutuyoruz. <br><br>
+                    
+                    Sizlerin ve can dostlarımızın hayatının daha kolay olmasına yardımcı olduğumuz için mutluluk duyuyoruz.</p>
+
+                    <p style="border-left: 3px solid blue; padding-left: 5px;">Türkiye'nin Veteriner sitesi
+                    </p>
+            </div>
+            <div class="col-md-4 float-left">
+                <img class="img-fluid w-100" src="/img/doggy.png" alt="">
+            </div>
+        </div>
+      </div>
+
+
+   <footer>
+       <div class="container mt-5  d-flex justify-content-center align-items-center bg-gray">
+           <p>VeterinerSitesi.Com</p>
+       </div>
+   </footer>   
+
+
+    <!-- Bootstrap Js -->
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+<script src="/js/bootstrap.min.js"></script>
+</body>
+</html>

@@ -1,0 +1,41 @@
+unit mainn;
+
+interface
+
+uses
+  Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
+  Dialogs, Menus,firma_islemlerii,firma_guncelleme;
+
+type
+  TForm2 = class(TForm)
+    MainMenu1: TMainMenu;
+    ad1: TMenuItem;
+    F1: TMenuItem;
+    FirmaGncelle1: TMenuItem;
+    Mterilemleri1: TMenuItem;
+    procedure F1Click(Sender: TObject);
+    procedure FirmaGncelle1Click(Sender: TObject);
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  Form2: TForm2;
+
+implementation
+
+{$R *.dfm}
+
+procedure TForm2.F1Click(Sender: TObject);
+begin
+  Form3.Show;
+end;
+
+procedure TForm2.FirmaGncelle1Click(Sender: TObject);
+begin
+  Form4.Show;
+end;
+
+end.

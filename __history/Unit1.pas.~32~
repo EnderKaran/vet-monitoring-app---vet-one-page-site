@@ -1,0 +1,81 @@
+unit Unit1;
+
+interface
+
+uses
+  Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
+  Dialogs,ShellAPI, StdCtrls;
+
+type
+  TForm1 = class(TForm)
+    Button1: TButton;
+    Label1: TLabel;
+    procedure Button1Click(Sender: TObject);
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  Form1: TForm1;
+
+implementation
+
+{$R *.dfm}
+ function CopyDir(const fromDir, toDir: string): Boolean;
+var
+  fos: TSHFileOpStruct;
+begin
+  ZeroMemory(@fos, SizeOf(fos));
+  with fos do
+  begin
+    wFunc  := FO_COPY;
+    fFlags := FOF_FILESONLY;
+    pFrom  := PChar(fromDir + #0);
+    pTo    := PChar(toDir)
+  end;
+  Result := (0 = ShFileOperation(fos));
+end;
+
+
+function MoveDir(const fromDir, toDir: string): Boolean;
+var
+  fos: TSHFileOpStruct;
+begin
+  ZeroMemory(@fos, SizeOf(fos));
+  with fos do
+  begin
+    wFunc  := FO_MOVE;
+    fFlags := FOF_FILESONLY;
+    pFrom  := PChar(fromDir + #0);
+    pTo    := PChar(toDir)
+  end;
+  Result := (0 = ShFileOperation(fos));
+end;
+
+function DelDir(dir: string): Boolean;
+var
+  fos: TSHFileOpStruct;
+begin
+  ZeroMemory(@fos, SizeOf(fos));
+  with fos do
+  begin
+    wFunc  := FO_DELETE;
+    fFlags := FOF_SILENT or FOF_NOCONFIRMATION;
+    pFrom  := PChar(dir + #0);
+  end;
+  Result := (0 = ShFileOperation(fos));
+end;
+
+
+procedure TForm1.Button1Click(Sender: TObject);
+   var
+    cCopyDir:string;
+begin
+  if cCopyDir('d:\download', 'e:\') = True then
+    ShowMessage('Directory copied.');
+
+Label1.Caption := BoolToStr(cCopyDir = True);
+end;
+end.

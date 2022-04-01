@@ -1,0 +1,43 @@
+unit harfnotuhesaplama;
+
+interface
+
+uses
+  Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
+  Dialogs, StdCtrls;
+
+type
+  TForm1 = class(TForm)
+    Button1: TButton;
+    Edit1: TEdit;
+    Label1: TLabel;
+    procedure Button1Click(Sender: TObject);
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  Form1: TForm1;
+
+implementation
+
+{$R *.dfm}
+
+procedure TForm1.Button1Click(Sender: TObject);
+var
+  x:integer;
+begin
+  x:=StrToInt(Edit1.Text);
+  case x of
+     0..49 : Label1.Caption := 'HARF NOTU: ' + 'FF';
+     50..59 : Label1.Caption := 'CC';
+     60..69 : Label1.Caption := 'CB';
+     70..79 : Label1.Caption := 'BB';
+     80..89 : Label1.Caption := 'BA';
+     90..100 : Label1.Caption := 'AA';
+  end;
+end;
+
+end.

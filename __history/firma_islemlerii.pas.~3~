@@ -1,0 +1,66 @@
+unit firma_islemlerii;
+
+interface
+
+uses
+  Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
+  Dialogs, StdCtrls, DB, DBAccess, MyAccess, MemDS, ExtCtrls;
+
+type
+  TForm3 = class(TForm)
+    Panel1: TPanel;
+    Button1: TButton;
+    Button2: TButton;
+    Button3: TButton;
+    Firma_2Query1: TMyQuery;
+    Firma_2Query1firma_Kodu: TIntegerField;
+    Firma_2Query1firma_ad: TStringField;
+    Firma_2Query1firma_acilis: TDateField;
+    Firma_2Query1vergi_dairesi: TStringField;
+    Firma_2Query1vergi_numarisi: TIntegerField;
+    Firma_2Query1telefon_no: TIntegerField;
+    Firma_2Query1fax_no: TIntegerField;
+    Firma_2Query1adres: TStringField;
+    Firma_2Query1il: TStringField;
+    Firma_2Query1ilçe: TStringField;
+    Firma_2Connection1: TMyConnection;
+    Edit10: TEdit;
+    Edit9: TEdit;
+    Edit8: TEdit;
+    Edit7: TEdit;
+    Edit6: TEdit;
+    Edit5: TEdit;
+    Edit4: TEdit;
+    Edit3: TEdit;
+    Edit2: TEdit;
+    Edit1: TEdit;
+    Label10: TLabel;
+    Label9: TLabel;
+    Label8: TLabel;
+    Label7: TLabel;
+    Label6: TLabel;
+    Label5: TLabel;
+    Label4: TLabel;
+    Label3: TLabel;
+    Label2: TLabel;
+    Label1: TLabel;
+    procedure Button2Click(Sender: TObject);
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  Form3: TForm3;
+
+implementation
+
+{$R *.dfm}
+
+procedure TForm3.Button2Click(Sender: TObject);
+begin
+Application.Terminate;
+end;
+
+end.

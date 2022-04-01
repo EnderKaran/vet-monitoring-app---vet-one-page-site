@@ -1,0 +1,61 @@
+unit veritabani;
+
+interface
+
+uses
+  Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
+  Dialogs, StdCtrls, ExtCtrls, Grids, DBGrids, frxClass, frxDBSet, DB, DBAccess,
+  MyAccess, MemDS;
+
+type
+  TForm1 = class(TForm)
+    MyConnection1: TMyConnection;
+    MyQuery1: TMyQuery;
+    MyDataSource1: TMyDataSource;
+    frxReport1: TfrxReport;
+    frxDBDataset1: TfrxDBDataset;
+    DBGrid1: TDBGrid;
+    Panel1: TPanel;
+    Button1: TButton;
+    Button2: TButton;
+    Button3: TButton;
+    Edit1: TEdit;
+    Button4: TButton;
+    procedure Button4Click(Sender: TObject);
+    procedure Button3Click(Sender: TObject);
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  Form1: TForm1;
+
+implementation
+
+{$R *.dfm}
+
+procedure TForm1.Button3Click(Sender: TObject);
+begin
+Application.Terminate;
+end;
+
+procedure TForm1.Button4Click(Sender: TObject);
+begin
+with MyQuery1 do
+    begin
+      MyQuery1.close;
+      MyQuery1.sql.clear;
+      MyQuery1.sql.add('SELECT * FROM ad');
+      MyQuery1.sql.add('WHERE id LIKE ''' + Edit1.Text + '''');
+      MyQuery1.open;
+      if RecordCount > 0 then
+      begin
+        ShowMessage('Kayit Bulundu');
+      end;
+
+    end;
+end;
+
+end.

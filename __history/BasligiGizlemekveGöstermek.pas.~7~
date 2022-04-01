@@ -1,0 +1,67 @@
+unit BasligiGizlemekveGöstermek;
+
+interface
+
+uses
+  Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
+  Dialogs, StdCtrls;
+
+type
+  TForm1 = class(TForm)
+    Button1: TButton;
+    Button2: TButton;
+    Label1: TLabel;
+    procedure Button1Click(Sender: TObject);
+    procedure Button2Click(Sender: TObject);
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  Form1: TForm1;
+
+implementation
+
+{$R *.dfm}
+
+procedure TForm1.Button1Click(Sender: TObject);
+Var
+Save : LongInt;
+Begin
+If form1.BorderStyle=bsNone then Exit;
+Save:=GetWindowLong(form1.Handle,gwl_Style);
+If (Save and ws_Caption)=ws_Caption then Begin
+Case form1.BorderStyle of
+bsSingle,
+bsSizeable : SetWindowLong(form1.Handle,gwl_Style,Save and
+(Not(ws_Caption)) or ws_border);
+bsDialog : SetWindowLong(form1.Handle,gwl_Style,Save and
+(Not(ws_Caption)) or ds_modalframe or ws_dlgframe);
+End;
+form1.Height:=form1.Height-getSystemMetrics(sm_cyCaption);
+form1.Refresh;
+End;
+end;
+
+procedure TForm1.Button2Click(Sender: TObject);
+Var
+Save : LongInt;
+begin
+If form1.BorderStyle=bsNone then Exit;
+Save:=GetWindowLong(form1.Handle,gwl_Style);
+If (Save and ws_Caption)<>ws_Caption then Begin
+Case form1.BorderStyle of
+bsSingle,
+bsSizeable : SetWindowLong(form1.Handle,gwl_Style,Save or ws_Caption or
+ws_border);
+bsDialog : SetWindowLong(form1.Handle,gwl_Style,Save or ws_Caption or
+ds_modalframe or ws_dlgframe);
+End;
+form1.Height:=form1.Height+getSystemMetrics(sm_cyC aption);
+form1.Refresh;
+End;
+end;
+
+end.

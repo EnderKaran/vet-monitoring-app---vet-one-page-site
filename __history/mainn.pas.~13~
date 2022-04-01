@@ -1,0 +1,63 @@
+unit mainn;
+
+interface
+
+uses
+  Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
+  Dialogs, Menus,firma_islemlerii,firma_guncelleme,kullanici_islemleri,borc_alacak,musteri_islemleri;
+
+type
+  TForm2 = class(TForm)
+    MainMenu1: TMainMenu;
+    ad1: TMenuItem;
+    F1: TMenuItem;
+    FirmaGncelle1: TMenuItem;
+    Mterilemleri1: TMenuItem;
+    Kullanclemleri1: TMenuItem;
+    Kullanclemi1: TMenuItem;
+    BorAlacak1: TMenuItem;
+    Mterilemleri2: TMenuItem;
+    procedure F1Click(Sender: TObject);
+    procedure FirmaGncelle1Click(Sender: TObject);
+    procedure Kullanclemi1Click(Sender: TObject);
+    procedure BorAlacak1Click(Sender: TObject);
+    procedure Mterilemleri2Click(Sender: TObject);
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  Form2: TForm2;
+
+implementation
+
+{$R *.dfm}
+
+procedure TForm2.BorAlacak1Click(Sender: TObject);
+begin
+   Form6.Show;
+end;
+
+procedure TForm2.F1Click(Sender: TObject);
+begin
+  Form3.Show;
+end;
+
+procedure TForm2.FirmaGncelle1Click(Sender: TObject);
+begin
+  Form4.Show;
+end;
+
+procedure TForm2.Kullanclemi1Click(Sender: TObject);
+begin
+   Form5.Show;
+end;
+
+procedure TForm2.Mterilemleri2Click(Sender: TObject);
+begin
+   Form7.Show;
+end;
+
+end.

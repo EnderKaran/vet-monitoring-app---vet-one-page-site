@@ -1,0 +1,62 @@
+unit satisÝslemi;
+
+interface
+
+uses
+  Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
+  Dialogs,datamodule, DB, DBAccess, MyAccess, Grids, DBGrids, StdCtrls,yenisayfa;
+
+type
+  TForm4 = class(TForm)
+    DBGrid1: TDBGrid;
+    MyDataSource1: TMyDataSource;
+    Edit1: TEdit;
+    Button1: TButton;
+    Button2: TButton;
+    Button3: TButton;
+    Button4: TButton;
+    Label1: TLabel;
+    procedure Button1Click(Sender: TObject);
+    procedure Button2Click(Sender: TObject);
+    procedure Button4Click(Sender: TObject);
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  Form4: TForm4;
+
+implementation
+
+{$R *.dfm}
+
+procedure TForm4.Button1Click(Sender: TObject);  //silme komutu
+begin
+  DataModule1.KonutQuery1.SQL.Text:= 'DELETE FROM ev where id=:i';
+  DataModule1.KonutQuery1.ParamByName('i').AsString:=edit1.Text;
+  DataModule1.KonutQuery1.Execute;
+end;
+
+procedure TForm4.Button2Click(Sender: TObject);   //Listeleme Komutu
+begin
+with DataModule1.KonutQuery1 do
+    begin
+      DataModule1.KonutQuery1.close;
+      DataModule1.KonutQuery1.sql.clear;
+      DataModule1.KonutQuery1.sql.add('SELECT * FROM ev');
+      DataModule1.KonutQuery1.open;
+      if RecordCount > 0 then
+      begin
+        ShowMessage('Veriler Listelendi');
+      end;
+    end;
+end;
+
+procedure TForm4.Button4Click(Sender: TObject);
+begin
+Application.Terminate;
+end;
+
+end.

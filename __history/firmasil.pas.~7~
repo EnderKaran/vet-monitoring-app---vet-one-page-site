@@ -1,0 +1,54 @@
+unit firmasil;
+
+interface
+
+uses
+  Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
+  Dialogs, StdCtrls, DB, DBAccess, MyAccess, MemDS;
+
+type
+  TForm5 = class(TForm)
+    Label1: TLabel;
+    Edit1: TEdit;
+    Button1: TButton;
+    silQuery1: TMyQuery;
+    silConnection1: TMyConnection;
+    silQuery1firma_no: TIntegerField;
+    silQuery1ad: TStringField;
+    silQuery1sehir: TStringField;
+    silQuery1faks_no: TIntegerField;
+    silQuery1vergi_no: TIntegerField;
+    silQuery1sirket_durumu: TStringField;
+    procedure Button1Click(Sender: TObject);
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  Form5: TForm5;
+
+implementation
+
+{$R *.dfm}
+
+procedure TForm5.Button1Click(Sender: TObject);
+begin
+with silQuery1 do
+  begin
+
+    try
+      silQuery1.close;
+      silQuery1.sql.clear;
+     silQuery1.sql.Text := 'DELETE FROM  firma WHERE firma_no =:Edit7_deger';
+      silQuery1.ParamByName('Edit7_deger').Value := StrToInt(Edit1.Text);
+      silQuery1.Execute;
+    finally
+      silQuery1.sql.add('SELECT * FROM firma');
+    end;
+
+  end;
+end;
+
+end.

@@ -1,0 +1,245 @@
+﻿object Form3: TForm3
+  Left = 0
+  Top = 0
+  Caption = 'Form3'
+  ClientHeight = 541
+  ClientWidth = 483
+  Color = clBtnFace
+  Font.Charset = DEFAULT_CHARSET
+  Font.Color = clWindowText
+  Font.Height = -11
+  Font.Name = 'Tahoma'
+  Font.Style = []
+  OldCreateOrder = False
+  PixelsPerInch = 96
+  TextHeight = 13
+  object Label10: TLabel
+    Left = 24
+    Top = 424
+    Width = 17
+    Height = 13
+    Caption = #304'l'#231'e'
+  end
+  object Label9: TLabel
+    Left = 24
+    Top = 392
+    Width = 6
+    Height = 13
+    Caption = #304'l'
+  end
+  object Label8: TLabel
+    Left = 24
+    Top = 320
+    Width = 28
+    Height = 13
+    Caption = 'Adres'
+  end
+  object Label7: TLabel
+    Left = 24
+    Top = 280
+    Width = 34
+    Height = 13
+    Caption = 'Fax No'
+  end
+  object Label6: TLabel
+    Left = 24
+    Top = 240
+    Width = 52
+    Height = 13
+    Caption = 'Telefon No'
+  end
+  object Label5: TLabel
+    Left = 24
+    Top = 203
+    Width = 67
+    Height = 13
+    Caption = 'Vergi Numar'#305's'#305
+  end
+  object Label4: TLabel
+    Left = 24
+    Top = 168
+    Width = 59
+    Height = 13
+    Caption = 'Vergi Dairesi'
+  end
+  object Label3: TLabel
+    Left = 24
+    Top = 128
+    Width = 81
+    Height = 13
+    Caption = 'Firma A'#231#305'l'#305#351' Tarihi'
+  end
+  object Label2: TLabel
+    Left = 24
+    Top = 63
+    Width = 44
+    Height = 13
+    Caption = 'Firma Ad'#305
+  end
+  object Label1: TLabel
+    Left = 24
+    Top = 27
+    Width = 53
+    Height = 13
+    Caption = 'Firma Kodu'
+  end
+  object Panel1: TPanel
+    Left = 0
+    Top = 500
+    Width = 483
+    Height = 41
+    Align = alBottom
+    Color = clSkyBlue
+    ParentBackground = False
+    TabOrder = 0
+    ExplicitTop = 491
+    ExplicitWidth = 431
+    object Button1: TButton
+      Left = 229
+      Top = 8
+      Width = 75
+      Height = 25
+      Caption = 'Kaydet'
+      TabOrder = 0
+      OnClick = Button1Click
+    end
+    object Button2: TButton
+      Left = 396
+      Top = 8
+      Width = 75
+      Height = 25
+      Caption = 'Kapat'
+      TabOrder = 1
+      OnClick = Button2Click
+    end
+    object Button3: TButton
+      Left = 310
+      Top = 8
+      Width = 75
+      Height = 25
+      Caption = 'Yazd'#305'r'
+      TabOrder = 2
+    end
+  end
+  object Edit10: TEdit
+    Left = 112
+    Top = 421
+    Width = 273
+    Height = 21
+    TabOrder = 1
+  end
+  object Edit9: TEdit
+    Left = 112
+    Top = 384
+    Width = 273
+    Height = 21
+    TabOrder = 2
+  end
+  object Edit8: TEdit
+    Left = 112
+    Top = 317
+    Width = 273
+    Height = 21
+    TabOrder = 3
+  end
+  object Edit7: TEdit
+    Left = 112
+    Top = 277
+    Width = 121
+    Height = 21
+    TabOrder = 4
+  end
+  object Edit6: TEdit
+    Left = 112
+    Top = 237
+    Width = 121
+    Height = 21
+    TabOrder = 5
+  end
+  object Edit5: TEdit
+    Left = 112
+    Top = 200
+    Width = 121
+    Height = 21
+    TabOrder = 6
+  end
+  object Edit4: TEdit
+    Left = 112
+    Top = 165
+    Width = 273
+    Height = 21
+    TabOrder = 7
+  end
+  object Edit3: TEdit
+    Left = 112
+    Top = 125
+    Width = 121
+    Height = 21
+    TabOrder = 8
+  end
+  object Edit2: TEdit
+    Left = 112
+    Top = 60
+    Width = 273
+    Height = 21
+    TabOrder = 9
+  end
+  object Edit1: TEdit
+    Left = 112
+    Top = 24
+    Width = 121
+    Height = 21
+    TabOrder = 10
+  end
+  object Firma_2Query1: TMyQuery
+    Connection = Firma_2Connection1
+    SQL.Strings = (
+      'select * from firma_2')
+    Left = 280
+    Top = 440
+    object Firma_2Query1firma_Kodu: TIntegerField
+      FieldName = 'firma_Kodu'
+    end
+    object Firma_2Query1firma_ad: TStringField
+      FieldName = 'firma_ad'
+      Size = 50
+    end
+    object Firma_2Query1firma_acilis: TDateField
+      FieldName = 'firma_acilis'
+    end
+    object Firma_2Query1vergi_dairesi: TStringField
+      FieldName = 'vergi_dairesi'
+      Size = 50
+    end
+    object Firma_2Query1vergi_numarisi: TIntegerField
+      FieldName = 'vergi_numarisi'
+    end
+    object Firma_2Query1telefon_no: TIntegerField
+      FieldName = 'telefon_no'
+    end
+    object Firma_2Query1fax_no: TIntegerField
+      FieldName = 'fax_no'
+    end
+    object Firma_2Query1adres: TStringField
+      FieldName = 'adres'
+      Size = 50
+    end
+    object Firma_2Query1il: TStringField
+      FieldName = 'il'
+      Size = 50
+    end
+    object Firma_2Query1ilçe: TStringField
+      FieldName = 'il'#231'e'
+      Size = 50
+    end
+  end
+  object Firma_2Connection1: TMyConnection
+    Database = 'musteri'
+    Username = 'root'
+    Password = 'ender16'
+    Server = 'localhost'
+    Connected = True
+    Left = 176
+    Top = 440
+  end
+end

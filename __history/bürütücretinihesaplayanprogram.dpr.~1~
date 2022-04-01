@@ -1,0 +1,10 @@
+program bürütücretinihesaplayanprogram;
+
+{$APPTYPE CONSOLE}
+
+uses
+  SysUtils;
+
+begin
+
+end.

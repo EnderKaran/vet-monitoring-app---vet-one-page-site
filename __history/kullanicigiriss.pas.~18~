@@ -1,0 +1,89 @@
+unit kullanicigiriss;
+
+interface
+
+uses
+  Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
+  Dialogs, DB, DBAccess, MyAccess, MemDS, Grids, DBGrids, StdCtrls, ExtCtrls,mainn;
+
+type
+  TForm1 = class(TForm)
+    Label1: TLabel;
+    Label2: TLabel;
+    Label3: TLabel;
+    Edit1: TEdit;
+    Edit2: TEdit;
+    Panel1: TPanel;
+    Button1: TButton;
+    Button2: TButton;
+    DBGrid1: TDBGrid;
+    Button3: TButton;
+    firmaConnection1: TMyConnection;
+    FirmaQuery1: TMyQuery;
+    FirmaQuery1firma_kodu: TIntegerField;
+    FirmaQuery1firma_ad: TStringField;
+    MyDataSource1: TMyDataSource;
+    kullaniciQuery1: TMyQuery;
+    kullaniciQuery1P_kullanici_adi: TStringField;
+    kullaniciQuery1P_kullanici_parola: TIntegerField;
+    procedure Button1Click(Sender: TObject);
+    procedure Button3Click(Sender: TObject);
+    procedure Button2Click(Sender: TObject);
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  Form1: TForm1;
+
+implementation
+
+{$R *.dfm}
+
+procedure TForm1.Button1Click(Sender: TObject);
+var
+same : Boolean;
+begin
+with kullaniciQuery1 do
+begin
+    Close;
+    SQL.Clear;
+    SQL.Add('Select * from kullanici Where P_kullanici_adi='+QuotedStr(Edit1.Text)+ 'and P_kullanici_parola='+QuotedStr(Edit2.Text));
+    Open;
+    if kullaniciQuery1.RecordCount > 0  then
+    begin
+      Form2.Show;
+    end
+    else
+    begin
+          Application.MessageBox('Kullanici adi veya sifre yanlis...','UYARI',MB_OK);
+          Edit1.Text:='';
+          Edit2.Text:='';
+          Edit1.SetFocus;
+    end;
+    if same(Form1.Button1.Click) then
+   begin
+      same:= True;
+     Form1.Close;
+   end;
+end;
+
+end;
+
+procedure TForm1.Button2Click(Sender: TObject);
+begin
+Application.Terminate;
+end;
+
+procedure TForm1.Button3Click(Sender: TObject);
+begin
+if (Edit1.Text) + (Edit2.Text) <>Null then
+begin
+   ShowMessage('Firma onayýný yapmanýz gerek!');
+   FirmaQuery1.Active := Enabled;
+end;
+end;
+
+end.

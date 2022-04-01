@@ -1,0 +1,23 @@
+program bürütücretinihesaplayanprogram;
+
+{$APPTYPE CONSOLE}
+
+uses
+  SysUtils;
+
+
+  var
+  ücret,yevmiye,çalýstýgýgünsayýsý:real;
+  begin
+    Write('günlük ücret'); Readln(yevmiye);
+    write(' çalýþtýðýgünsayýsý ' ); readln (çalýstýgýgünsayýsý);
+ücret:=yevmiye*çalýstýgýgünsayýsý;
+write(' bürüt ücret ' ); readln (ücret);
+readln;
+
+
+
+
+
+
+end.

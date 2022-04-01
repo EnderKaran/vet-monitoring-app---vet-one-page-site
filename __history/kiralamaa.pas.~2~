@@ -1,0 +1,35 @@
+unit kiralamaa;
+
+interface
+
+uses
+  Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
+  Dialogs, DB, DBAccess, MyAccess, StdCtrls, Grids, DBGrids;
+
+type
+  TForm4 = class(TForm)
+    DBGrid1: TDBGrid;
+    Edit1: TEdit;
+    Button1: TButton;
+    Button2: TButton;
+    MyDataSource1: TMyDataSource;
+    procedure Button2Click(Sender: TObject);
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  Form4: TForm4;
+
+implementation
+
+{$R *.dfm}
+
+procedure TForm4.Button2Click(Sender: TObject);
+begin
+Application.Terminate;
+end;
+
+end.

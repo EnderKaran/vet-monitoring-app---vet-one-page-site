@@ -1,0 +1,71 @@
+unit recetekontrol;
+
+interface
+
+uses
+  Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
+  Dialogs, StdCtrls, ExtCtrls, DB, MemDS, DBAccess, MyAccess;
+
+type
+  TForm6 = class(TForm)
+    Label1: TLabel;
+    Label2: TLabel;
+    Label3: TLabel;
+    Label4: TLabel;
+    Label5: TLabel;
+    Edit1: TEdit;
+    Edit2: TEdit;
+    Edit3: TEdit;
+    Edit4: TEdit;
+    Panel1: TPanel;
+    Button1: TButton;
+    Button3: TButton;
+    MyConnection1: TMyConnection;
+    MyQuery1: TMyQuery;
+    MyQuery1baslik: TStringField;
+    MyQuery1konu: TStringField;
+    MyQuery1tarih: TStringField;
+    MyQuery1doktor_ismi: TStringField;
+    procedure Button3Click(Sender: TObject);
+    procedure Button1Click(Sender: TObject);
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  Form6: TForm6;
+
+implementation
+
+{$R *.dfm}
+
+procedure TForm6.Button1Click(Sender: TObject);
+begin
+with MyConnection1 do
+  begin
+    try
+      MyQuery1.close;
+      MyQuery1.sql.clear;
+      MyQuery1.sql.Text :=
+      'INSERT INTO tablo(baslik,konu,tarih,doktor_ismi) VALUES(:baslik,:konu,:tarih,:doktor_ismi)';
+      MyQuery1.ParamByName('baslik').Value := Edit1.Text;
+      MyQuery1.ParamByName('konu').Value := Edit2.Text;
+      MyQuery1.ParamByName('tarih').Value := Edit3.Text;
+      MyQuery1.ParamByName('doktor_ismi').Value := Edit4.Text;
+      ShowMessage('Veriler Eklendi');
+      MyQuery1.Execute;
+
+    finally
+      MyQuery1.sql.add('SELECT * FROM tablo');
+    end;
+  end;
+end;
+
+procedure TForm6.Button3Click(Sender: TObject);
+begin
+Application.Terminate;
+end;
+
+end.

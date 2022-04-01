@@ -1,0 +1,79 @@
+unit konutekle;
+
+interface
+
+uses
+  Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
+  Dialogs,datamodule, DB, DBAccess, MyAccess, Grids, DBGrids, StdCtrls, Mask,
+  DBCtrls;
+
+type
+  TForm3 = class(TForm)
+    DBGrid1: TDBGrid;
+    MyDataSource1: TMyDataSource;
+    DBEdit1: TDBEdit;
+    DBEdit2: TDBEdit;
+    Label1: TLabel;
+    Label2: TLabel;
+    Label3: TLabel;
+    DBEdit3: TDBEdit;
+    Label4: TLabel;
+    DBEdit4: TDBEdit;
+    Label5: TLabel;
+    DBEdit5: TDBEdit;
+    Label6: TLabel;
+    DBEdit6: TDBEdit;
+    Label7: TLabel;
+    DBEdit7: TDBEdit;
+    Button1: TButton;
+    Label8: TLabel;
+    DBEdit8: TDBEdit;
+    Button2: TButton;
+    procedure Button2Click(Sender: TObject);
+    procedure Button1Click(Sender: TObject);
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  Form3: TForm3;
+
+implementation
+
+{$R *.dfm}
+
+procedure TForm3.Button1Click(Sender: TObject);
+var
+  semt,yapimTarihi,evTuru,evDurumu:string;
+  emlakNumarisi,Odasayisi,katNumarisi,toplamEveAlma:integer;
+begin
+    emlakNumarisi := StrToInt(InputBox('emlakNumarasi', 'Enter a ID:','251'));
+    OdaSayisi := StrToInt(InputBox('id', 'Enter a ID:','251'));
+    katNumarisi := StrToInt(InputBox('id', 'Enter a ID:','251'));
+    toplamEveAlma := StrToInt(InputBox('id', 'Enter a ID:','251'));
+    semt := InputBox('adi', 'Enter a Semt:','Meteora');
+    yapimTarihi := InputBox('adi', 'Enter a Semt:','Meteora');
+    evTuru := InputBox('soyadi', 'Enter a SurName:','Meteora');
+    evDurumu := InputBox('soyadi', 'Enter a SurName:','Meteora');
+
+   DataModule1.KonutQuery1.Insert;
+   DataModule1.KonutQuery1['emlakNumarasi'] := emlakNumarisi;
+   DataModule1.KonutQuery1['id'] := OdaSayisi;
+   DataModule1.KonutQuery1['id'] := katNumarisi;
+   DataModule1.KonutQuery1['id'] := toplamEveAlma;
+
+   DataModule1.KonutQuery1['adi'] := semt;
+   DataModule1.KonutQuery1['soyadi'] := yapimTarihi;
+   DataModule1.KonutQuery1['soyadi'] := evTuru;
+   DataModule1.KonutQuery1['soyadi'] := evDurumu;
+   DataModule1.KonutQuery1.Post;
+end;
+
+procedure TForm3.Button2Click(Sender: TObject);
+begin
+Application.Terminate;
+end;
+
+end.

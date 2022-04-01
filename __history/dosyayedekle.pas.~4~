@@ -1,0 +1,60 @@
+unit dosyayedekle;
+
+interface
+
+uses
+  Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
+  Dialogs, StdCtrls;
+
+type
+  TForm20 = class(TForm)
+    Label1: TLabel;
+    Label2: TLabel;
+    Button1: TButton;
+    Edit1: TEdit;
+    Button2: TButton;
+    ListBox1: TListBox;
+    Button3: TButton;
+    OpenDialog1: TOpenDialog;
+    procedure Button1Click(Sender: TObject);
+    procedure Button2Click(Sender: TObject);
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  Form20: TForm20;
+
+implementation
+
+{$R *.dfm}
+
+procedure TForm20.Button1Click(Sender: TObject);
+begin
+if FileManager(Edit1.Text, 'C:\dosya', '*.*') then
+         begin
+            ShowMessage('Veriler Yedeklendi');
+            ListBox1.Items.Add(Edit1.Text);
+  end;
+end;
+
+procedure TForm20.Button2Click(Sender: TObject);
+var
+  openDialog : TOpenDialog;
+  i : Integer;
+begin
+  openDialog := TOpenDialog.Create(self);
+  openDialog.InitialDir := GetCurrentDir;
+    if not openDialog.Execute
+  then ShowMessage('hata')
+  else
+  begin
+
+   Edit1.Text := (openDialog.Files.GetText);
+   end;
+  openDialog.Free;
+end;
+
+end.

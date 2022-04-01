@@ -1,0 +1,46 @@
+object Form2: TForm2
+  Left = 0
+  Top = 0
+  Caption = 'Form2'
+  ClientHeight = 300
+  ClientWidth = 635
+  Color = clBtnFace
+  Font.Charset = DEFAULT_CHARSET
+  Font.Color = clWindowText
+  Font.Height = -11
+  Font.Name = 'Tahoma'
+  Font.Style = []
+  Menu = MainMenu1
+  OldCreateOrder = False
+  PixelsPerInch = 96
+  TextHeight = 13
+  object MainMenu1: TMainMenu
+    Left = 584
+    Top = 248
+    object ad1: TMenuItem
+      Caption = 'Firma '#304#351'lemleri'
+      object F1: TMenuItem
+        Caption = 'Firma Ekle'
+        OnClick = F1Click
+      end
+      object FirmaGncelle1: TMenuItem
+        Caption = 'Firma Bilgilerini G'#252'ncelle'
+        OnClick = FirmaGncelle1Click
+      end
+    end
+    object Mterilemleri1: TMenuItem
+      Caption = 'M'#252#351'teri '#304#351'lemleri'
+      object BorAlacak1: TMenuItem
+        Caption = 'Bor'#231' Alacak'
+        OnClick = BorAlacak1Click
+      end
+    end
+    object Kullanclemleri1: TMenuItem
+      Caption = 'Kullan'#305'c'#305' '#304#351'lemleri'
+      object Kullanclemi1: TMenuItem
+        Caption = 'Kullan'#305'c'#305' '#304#351'lemi'
+        OnClick = Kullanclemi1Click
+      end
+    end
+  end
+end

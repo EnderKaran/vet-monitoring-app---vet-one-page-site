@@ -1,0 +1,52 @@
+object Form3: TForm3
+  Left = 0
+  Top = 0
+  Caption = 'Kullan'#305'c'#305' Ekle'
+  ClientHeight = 263
+  ClientWidth = 372
+  Color = clBtnFace
+  Font.Charset = DEFAULT_CHARSET
+  Font.Color = clWindowText
+  Font.Height = -11
+  Font.Name = 'Tahoma'
+  Font.Style = []
+  OldCreateOrder = False
+  PixelsPerInch = 96
+  TextHeight = 13
+  object cxLabel1: TcxLabel
+    Left = 24
+    Top = 32
+    Caption = 'Kullan'#305'c'#305' Ad'#305
+    ParentFont = False
+    Style.Font.Charset = DEFAULT_CHARSET
+    Style.Font.Color = clWindowText
+    Style.Font.Height = -17
+    Style.Font.Name = 'Tahoma'
+    Style.Font.Style = []
+    Style.IsFontAssigned = True
+  end
+  object cxLabel2: TcxLabel
+    Left = 24
+    Top = 80
+    Caption = #350'ifre'
+    ParentFont = False
+    Style.Font.Charset = DEFAULT_CHARSET
+    Style.Font.Color = clWindowText
+    Style.Font.Height = -17
+    Style.Font.Name = 'Tahoma'
+    Style.Font.Style = []
+    Style.IsFontAssigned = True
+  end
+  object cxDBTextEdit1: TcxDBTextEdit
+    Left = 136
+    Top = 37
+    TabOrder = 2
+    Width = 177
+  end
+  object cxDBTextEdit2: TcxDBTextEdit
+    Left = 136
+    Top = 85
+    TabOrder = 3
+    Width = 177
+  end
+end

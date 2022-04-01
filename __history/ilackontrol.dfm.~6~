@@ -1,0 +1,84 @@
+object Form1: TForm1
+  Left = 0
+  Top = 0
+  Caption = #304'la'#231' / Firma Kontrol'
+  ClientHeight = 286
+  ClientWidth = 590
+  Color = clBtnFace
+  Font.Charset = DEFAULT_CHARSET
+  Font.Color = clWindowText
+  Font.Height = -11
+  Font.Name = 'Tahoma'
+  Font.Style = []
+  OldCreateOrder = False
+  PixelsPerInch = 96
+  TextHeight = 13
+  object Image1: TImage
+    Left = 0
+    Top = 0
+    Width = 590
+    Height = 286
+    Align = alClient
+    ExplicitLeft = 8
+    ExplicitTop = 8
+    ExplicitWidth = 574
+    ExplicitHeight = 270
+  end
+  object Button1: TButton
+    Left = 40
+    Top = 48
+    Width = 129
+    Height = 57
+    Caption = 'Firma Kay'#305't'
+    TabOrder = 0
+  end
+  object Button2: TButton
+    Left = 40
+    Top = 136
+    Width = 129
+    Height = 65
+    Caption = 'Firma Listele'
+    TabOrder = 1
+  end
+  object Button3: TButton
+    Left = 208
+    Top = 48
+    Width = 129
+    Height = 57
+    Caption = 'Firma G'#252'ncelle'
+    TabOrder = 2
+  end
+  object Button4: TButton
+    Left = 208
+    Top = 136
+    Width = 129
+    Height = 65
+    Caption = 'Re'#231'ete Kontrol'
+    TabOrder = 3
+  end
+  object Button5: TButton
+    Left = 496
+    Top = 253
+    Width = 75
+    Height = 25
+    Caption = #199#305'k'#305#351
+    TabOrder = 4
+    OnClick = Button5Click
+  end
+  object Button6: TButton
+    Left = 376
+    Top = 48
+    Width = 121
+    Height = 57
+    Caption = 'Firma Sil'
+    TabOrder = 5
+  end
+  object Button7: TButton
+    Left = 376
+    Top = 136
+    Width = 121
+    Height = 65
+    Caption = 'Re'#231'ete Okuma'
+    TabOrder = 6
+  end
+end

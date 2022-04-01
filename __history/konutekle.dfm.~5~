@@ -1,0 +1,181 @@
+object Form3: TForm3
+  Left = 0
+  Top = 0
+  Caption = 'Konuk Sat'
+  ClientHeight = 320
+  ClientWidth = 505
+  Color = clBtnFace
+  Font.Charset = DEFAULT_CHARSET
+  Font.Color = clWindowText
+  Font.Height = -11
+  Font.Name = 'Tahoma'
+  Font.Style = []
+  OldCreateOrder = False
+  PixelsPerInch = 96
+  TextHeight = 13
+  object Label1: TLabel
+    Left = 8
+    Top = 24
+    Width = 70
+    Height = 13
+    Caption = 'Emlak Numar'#305's'#305
+  end
+  object Label2: TLabel
+    Left = 24
+    Top = 54
+    Width = 50
+    Height = 13
+    Caption = 'Oda Say'#305's'#305
+  end
+  object Label3: TLabel
+    Left = 24
+    Top = 88
+    Width = 59
+    Height = 13
+    Caption = 'Kat Numar'#305's'#305
+  end
+  object Label4: TLabel
+    Left = 24
+    Top = 120
+    Width = 24
+    Height = 13
+    Caption = 'Semt'
+  end
+  object Label5: TLabel
+    Left = 232
+    Top = 24
+    Width = 81
+    Height = 13
+    Caption = 'Toplam Eve Alma'
+  end
+  object Label6: TLabel
+    Left = 248
+    Top = 54
+    Width = 57
+    Height = 13
+    Caption = 'Yap'#305'm Tarihi'
+  end
+  object Label7: TLabel
+    Left = 256
+    Top = 78
+    Width = 37
+    Height = 13
+    Caption = 'Ev T'#252'r'#252
+  end
+  object Label8: TLabel
+    Left = 253
+    Top = 112
+    Width = 52
+    Height = 13
+    Caption = 'Ev Durumu'
+  end
+  object DBGrid1: TDBGrid
+    Left = 0
+    Top = 200
+    Width = 505
+    Height = 120
+    Align = alBottom
+    DataSource = MyDataSource1
+    TabOrder = 0
+    TitleFont.Charset = DEFAULT_CHARSET
+    TitleFont.Color = clWindowText
+    TitleFont.Height = -11
+    TitleFont.Name = 'Tahoma'
+    TitleFont.Style = []
+  end
+  object DBEdit1: TDBEdit
+    Left = 96
+    Top = 24
+    Width = 121
+    Height = 21
+    DataField = 'emlakNumarasi'
+    DataSource = MyDataSource1
+    TabOrder = 1
+  end
+  object DBEdit2: TDBEdit
+    Left = 96
+    Top = 51
+    Width = 121
+    Height = 21
+    DataField = 'odaSayisi'
+    DataSource = MyDataSource1
+    TabOrder = 2
+  end
+  object DBEdit3: TDBEdit
+    Left = 96
+    Top = 85
+    Width = 121
+    Height = 21
+    DataField = 'katNumarasi'
+    DataSource = MyDataSource1
+    TabOrder = 3
+  end
+  object DBEdit4: TDBEdit
+    Left = 96
+    Top = 117
+    Width = 121
+    Height = 21
+    DataField = 'semt'
+    DataSource = MyDataSource1
+    TabOrder = 4
+  end
+  object DBEdit5: TDBEdit
+    Left = 319
+    Top = 21
+    Width = 121
+    Height = 21
+    DataField = 'toplamEveAlma'
+    DataSource = MyDataSource1
+    TabOrder = 5
+  end
+  object DBEdit6: TDBEdit
+    Left = 319
+    Top = 48
+    Width = 121
+    Height = 21
+    DataField = 'yapimTarihi'
+    DataSource = MyDataSource1
+    TabOrder = 6
+  end
+  object DBEdit7: TDBEdit
+    Left = 319
+    Top = 75
+    Width = 121
+    Height = 21
+    DataField = 'evTuru'
+    DataSource = MyDataSource1
+    TabOrder = 7
+  end
+  object Button1: TButton
+    Left = 24
+    Top = 150
+    Width = 153
+    Height = 44
+    Caption = 'Konut Ekle'
+    TabOrder = 8
+    OnClick = Button1Click
+  end
+  object DBEdit8: TDBEdit
+    Left = 319
+    Top = 109
+    Width = 121
+    Height = 21
+    DataField = 'evDurumu'
+    DataSource = MyDataSource1
+    TabOrder = 9
+  end
+  object Button2: TButton
+    Left = 408
+    Top = 152
+    Width = 75
+    Height = 42
+    Caption = #199#305'k'#305#351
+    TabOrder = 10
+    OnClick = Button2Click
+  end
+  object MyDataSource1: TMyDataSource
+    DataSet = DataModule1.KonutQuery1
+    Left = 456
+    Top = 24
+  end
+end

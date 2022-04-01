@@ -1,0 +1,98 @@
+unit mainn;
+
+interface
+
+uses
+  Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
+  Dialogs, Menus,firma_islemlerii,firma_guncelleme,kullanici_islemleri,borc_alacak,musteri_islemleri,
+  ImgList, StdCtrls, ExtCtrls, Grids, DBGrids, Mask, DBCtrls;
+
+type
+  TForm2 = class(TForm)
+    MainMenu1: TMainMenu;
+    ad1: TMenuItem;
+    F1: TMenuItem;
+    FirmaGncelle1: TMenuItem;
+    Mterilemleri1: TMenuItem;
+    Kullanclemleri1: TMenuItem;
+    Kullanclemi1: TMenuItem;
+    BorAlacak1: TMenuItem;
+    Mterilemleri2: TMenuItem;
+    ImageList1: TImageList;
+    DBGrid1: TDBGrid;
+    Panel1: TPanel;
+    Label1: TLabel;
+    Label2: TLabel;
+    Label13: TLabel;
+    Label12: TLabel;
+    Label11: TLabel;
+    Label10: TLabel;
+    Label9: TLabel;
+    Label7: TLabel;
+    Label6: TLabel;
+    Label5: TLabel;
+    Label4: TLabel;
+    Label3: TLabel;
+    DBEdit1: TDBEdit;
+    DBEdit2: TDBEdit;
+    DBEdit3: TDBEdit;
+    DBEdit4: TDBEdit;
+    DBEdit5: TDBEdit;
+    DBEdit6: TDBEdit;
+    DBEdit7: TDBEdit;
+    DBEdit8: TDBEdit;
+    DBEdit9: TDBEdit;
+    DBEdit10: TDBEdit;
+    GroupBox1: TGroupBox;
+    Label8: TLabel;
+    Label14: TLabel;
+    Label15: TLabel;
+    Label16: TLabel;
+    Label17: TLabel;
+    Label18: TLabel;
+    Button1: TButton;
+    Button2: TButton;
+    procedure F1Click(Sender: TObject);
+    procedure FirmaGncelle1Click(Sender: TObject);
+    procedure Kullanclemi1Click(Sender: TObject);
+    procedure BorAlacak1Click(Sender: TObject);
+    procedure Mterilemleri2Click(Sender: TObject);
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  Form2: TForm2;
+
+implementation
+
+{$R *.dfm}
+
+procedure TForm2.BorAlacak1Click(Sender: TObject);
+begin
+   Form6.Show;
+end;
+
+procedure TForm2.F1Click(Sender: TObject);
+begin
+  Form3.Show;
+end;
+
+procedure TForm2.FirmaGncelle1Click(Sender: TObject);
+begin
+  Form4.Show;
+end;
+
+procedure TForm2.Kullanclemi1Click(Sender: TObject);
+begin
+   Form5.Show;
+end;
+
+procedure TForm2.Mterilemleri2Click(Sender: TObject);
+begin
+   Form7.Show;
+end;
+
+end.

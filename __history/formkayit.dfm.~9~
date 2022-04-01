@@ -1,0 +1,249 @@
+object Form2: TForm2
+  Left = 0
+  Top = 0
+  Caption = 'Firma Kay'#305't'
+  ClientHeight = 401
+  ClientWidth = 635
+  Color = clBtnFace
+  Font.Charset = DEFAULT_CHARSET
+  Font.Color = clWindowText
+  Font.Height = -11
+  Font.Name = 'Tahoma'
+  Font.Style = []
+  OldCreateOrder = False
+  PixelsPerInch = 96
+  TextHeight = 13
+  object Label1: TLabel
+    Left = 326
+    Top = 32
+    Width = 17
+    Height = 18
+    Caption = 'Ad'
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -15
+    Font.Name = 'Tahoma'
+    Font.Style = []
+    ParentFont = False
+  end
+  object Label2: TLabel
+    Left = 40
+    Top = 88
+    Width = 31
+    Height = 18
+    Caption = #350'ehir'
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -15
+    Font.Name = 'Tahoma'
+    Font.Style = []
+    ParentFont = False
+  end
+  object Label3: TLabel
+    Left = 40
+    Top = 32
+    Width = 59
+    Height = 18
+    Caption = 'Firma No'
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -15
+    Font.Name = 'Tahoma'
+    Font.Style = []
+    ParentFont = False
+  end
+  object Label4: TLabel
+    Left = 326
+    Top = 92
+    Width = 53
+    Height = 18
+    Caption = 'Faks No'
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -15
+    Font.Name = 'Tahoma'
+    Font.Style = []
+    ParentFont = False
+  end
+  object Label5: TLabel
+    Left = 40
+    Top = 148
+    Width = 55
+    Height = 18
+    Caption = 'Vergi No'
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -15
+    Font.Name = 'Tahoma'
+    Font.Style = []
+    ParentFont = False
+  end
+  object Label6: TLabel
+    Left = 326
+    Top = 148
+    Width = 92
+    Height = 18
+    Caption = #350'irket Durumu'
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -15
+    Font.Name = 'Tahoma'
+    Font.Style = []
+    ParentFont = False
+  end
+  object Panel1: TPanel
+    Left = 0
+    Top = 360
+    Width = 635
+    Height = 41
+    Align = alBottom
+    TabOrder = 0
+    ExplicitLeft = 104
+    ExplicitTop = 224
+    ExplicitWidth = 185
+    object Button1: TButton
+      Left = 343
+      Top = 6
+      Width = 75
+      Height = 25
+      Caption = 'Kaydet'
+      TabOrder = 0
+      OnClick = Button1Click
+    end
+    object Button2: TButton
+      Left = 440
+      Top = 6
+      Width = 75
+      Height = 25
+      Caption = 'Yazd'#305'r'
+      TabOrder = 1
+    end
+    object Button3: TButton
+      Left = 536
+      Top = 6
+      Width = 75
+      Height = 25
+      Caption = #199#305'k'#305#351
+      TabOrder = 2
+      OnClick = Button3Click
+    end
+  end
+  object DBGrid1: TDBGrid
+    Left = 0
+    Top = 240
+    Width = 635
+    Height = 120
+    Align = alBottom
+    DataSource = MyDataSource1
+    TabOrder = 1
+    TitleFont.Charset = DEFAULT_CHARSET
+    TitleFont.Color = clWindowText
+    TitleFont.Height = -11
+    TitleFont.Name = 'Tahoma'
+    TitleFont.Style = []
+  end
+  object Edit1: TEdit
+    Left = 120
+    Top = 33
+    Width = 177
+    Height = 21
+    TabOrder = 2
+  end
+  object Edit2: TEdit
+    Left = 120
+    Top = 89
+    Width = 177
+    Height = 21
+    TabOrder = 3
+  end
+  object Edit3: TEdit
+    Left = 120
+    Top = 149
+    Width = 177
+    Height = 21
+    TabOrder = 4
+  end
+  object Edit4: TEdit
+    Left = 424
+    Top = 33
+    Width = 177
+    Height = 21
+    TabOrder = 5
+  end
+  object Edit5: TEdit
+    Left = 424
+    Top = 89
+    Width = 177
+    Height = 21
+    TabOrder = 6
+  end
+  object ComboBox1: TComboBox
+    Left = 424
+    Top = 149
+    Width = 177
+    Height = 21
+    ItemHeight = 13
+    TabOrder = 7
+    Items.Strings = (
+      'Aktif'
+      'Pasif')
+  end
+  object Button4: TButton
+    Left = 424
+    Top = 192
+    Width = 169
+    Height = 25
+    Caption = 'Ba'#287'lan'
+    TabOrder = 8
+  end
+  object MyQuery1: TMyQuery
+    Connection = MyConnection1
+    SQL.Strings = (
+      'select * from firma')
+    Active = True
+    Left = 248
+    Top = 192
+    object MyQuery1firma_no: TIntegerField
+      AutoGenerateValue = arAutoInc
+      FieldName = 'firma_no'
+      Origin = 'firma.firma_no'
+    end
+    object MyQuery1ad: TStringField
+      FieldName = 'ad'
+      Origin = 'firma.ad'
+      Size = 50
+    end
+    object MyQuery1sehir: TStringField
+      FieldName = 'sehir'
+      Origin = 'firma.sehir'
+      Size = 50
+    end
+    object MyQuery1faks_no: TIntegerField
+      FieldName = 'faks_no'
+      Origin = 'firma.faks_no'
+    end
+    object MyQuery1vergi_no: TIntegerField
+      FieldName = 'vergi_no'
+      Origin = 'firma.vergi_no'
+    end
+    object MyQuery1sirket_durumu: TStringField
+      FieldName = 'sirket_durumu'
+      Origin = 'firma.sirket_durumu'
+      Size = 50
+    end
+  end
+  object MyConnection1: TMyConnection
+    Database = 'ilac'
+    Username = 'root'
+    Password = 'ender16'
+    Server = 'localhost'
+    Connected = True
+    Left = 168
+    Top = 192
+  end
+  object MyDataSource1: TMyDataSource
+    DataSet = MyQuery1
+    Left = 320
+    Top = 192
+  end
+end

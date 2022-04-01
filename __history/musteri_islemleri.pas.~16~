@@ -1,0 +1,142 @@
+unit musteri_islemleri;
+
+interface
+
+uses
+  Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
+  Dialogs, StdCtrls, Grids, DBGrids, ExtCtrls, DB, MemDS, DBAccess, MyAccess;
+
+type
+  TForm7 = class(TForm)
+    Panel1: TPanel;
+    Panel2: TPanel;
+    DBGrid1: TDBGrid;
+    Label1: TLabel;
+    Label2: TLabel;
+    Edit1: TEdit;
+    Button1: TButton;
+    Button2: TButton;
+    Button3: TButton;
+    Button4: TButton;
+    Label3: TLabel;
+    Label4: TLabel;
+    Label5: TLabel;
+    Label6: TLabel;
+    Label7: TLabel;
+    Label8: TLabel;
+    Label9: TLabel;
+    Label10: TLabel;
+    Label11: TLabel;
+    Label12: TLabel;
+    Label13: TLabel;
+    Button5: TButton;
+    Edit2: TEdit;
+    Edit3: TEdit;
+    Edit4: TEdit;
+    Edit5: TEdit;
+    Edit6: TEdit;
+    Edit7: TEdit;
+    Edit8: TEdit;
+    Edit9: TEdit;
+    Edit10: TEdit;
+    Edit11: TEdit;
+    MyConnection1: TMyConnection;
+    MyDataSource1: TMyDataSource;
+    MyQuery1: TMyQuery;
+    MyQuery1musteri_kodu: TIntegerField;
+    MyQuery1musteri_adi: TStringField;
+    MyQuery1musteri_soyadi: TStringField;
+    MyQuery1musteri_unvan: TStringField;
+    MyQuery1kimlik: TIntegerField;
+    MyQuery1vergi_no: TIntegerField;
+    MyQuery1telefon_no: TIntegerField;
+    MyQuery1il: TStringField;
+    MyQuery1ilce: TStringField;
+    MyQuery1adres: TStringField;
+    Edit12: TEdit;
+    procedure Button4Click(Sender: TObject);
+    procedure Button2Click(Sender: TObject);
+    procedure Button3Click(Sender: TObject);
+    procedure Button1Click(Sender: TObject);
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  Form7: TForm7;
+
+implementation
+
+{$R *.dfm}
+
+procedure TForm7.Button1Click(Sender: TObject);
+begin
+with MyQuery1 do
+  begin
+
+    try
+      MyQuery1.close;
+      MyQuery1.sql.clear;
+      MyQuery1.sql.Text := 'DELETE FROM kullanici WHERE id=:Edit7_deger';
+      MyQuery1.ParamByName('Edit7_deger').Value := StrToInt(Edit3.Text) ;
+      MyQuery1.Execute;
+    finally
+      MyQuery1.sql.add('SELECT * FROM kullanici');
+    end;
+
+  end;
+end;
+
+procedure TForm7.Button2Click(Sender: TObject);
+begin
+with MyQuery1 do
+ begin
+   try
+     MyQuery1.Close;
+     MyQuery1.SQL.Clear;
+     MyQuery1.SQL.Text := 'INSERT INTO musteri_islemleri(musteri_kodu,musteri_adi,musteri_soyadi,musteri_unvan,kimlik,vergi_no,telefon_no,fax_no,il,ilce,adres) VALUES(:musteri_kodu,:musteri_adi,:musteri_soyadi,:musteri_unvan,:kimlik,:vergi_no,:telefon_no,:fax_no,:il,:ilce,:adres)';
+     MyQuery1.ParamByName('musteri_kodu').Value := Edit2.Text;
+     MyQuery1.ParamByName('musteri_adi').Value := Edit3.Text;
+     MyQuery1.ParamByName('musteri_soyadi').Value := Edit4.Text;
+     MyQuery1.ParamByName('musteri_unvan').Value := Edit5.Text;
+     MyQuery1.ParamByName('kimlik').Value := Edit6.Text;
+     MyQuery1.ParamByName('vergi_no').Value := Edit7.Text;
+     MyQuery1.ParamByName('telefon_no').Value := Edit8.Text;
+     MyQuery1.ParamByName('fax_no').Value := Edit9.Text;
+     MyQuery1.ParamByName('il').Value := Edit10.Text;
+     MyQuery1.ParamByName('ilce').Value := Edit11.Text;
+     MyQuery1.ParamByName('adres').Value := Edit12.Text;
+     ShowMessage('Veriler Eklendi');
+     MyQuery1.Execute;
+   finally
+      MyQuery1.SQL.Add('SELECT * FROM musteri_islemleri');
+   end;
+ end;
+end;
+
+procedure TForm7.Button3Click(Sender: TObject);
+begin
+MyQuery1.SQL.Text := 'UPDATE musteri_islemleri SET musteri_adi= musteri_adi:,musteri_soyadi= :musteri_soyadi,musteri_unvan= :musteri_unvan,kimlik= :kimlik,vergi_no= :vergi_no,telefon_no= :telefon_no,fax_no= :fax_no,il= :il,ilce= :ilce,adres=:adres where musteri_kodu=:i';
+  MyQuery1.ParamByName('i').AsString := Edit2.Text;
+  MyQuery1.ParamByName('musteri_adi').AsString := Edit3.Text;
+  MyQuery1.ParamByName('musteri_soyadi').AsString := Edit4.Text;
+  MyQuery1.ParamByName('musteri_unvan').AsString := Edit5.Text;
+  MyQuery1.ParamByName('kimlik').AsString := Edit6.Text;
+  MyQuery1.ParamByName('vergi_no').AsString := Edit7.Text;
+  MyQuery1.ParamByName('telefon_no').AsString := Edit8.Text;
+  MyQuery1.ParamByName('fax_no').AsString := Edit9.Text;
+  MyQuery1.ParamByName('il').AsString := Edit10.Text;
+  MyQuery1.ParamByName('ilce').AsString := Edit11.Text;
+   MyQuery1.ParamByName('adres').AsString := Edit12.Text;
+  ShowMessage('Veriler baþarýyla Güncellendi');
+  MyQuery1.Execute;
+end;
+
+procedure TForm7.Button4Click(Sender: TObject);
+begin
+Application.Terminate;
+end;
+
+end.

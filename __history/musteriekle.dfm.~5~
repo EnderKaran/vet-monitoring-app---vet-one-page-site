@@ -1,0 +1,50 @@
+object Form8: TForm8
+  Left = 0
+  Top = 0
+  Caption = 'M'#252#351'teri Ekle K'#305'sm'#305
+  ClientHeight = 288
+  ClientWidth = 635
+  Color = clBtnFace
+  Font.Charset = DEFAULT_CHARSET
+  Font.Color = clWindowText
+  Font.Height = -11
+  Font.Name = 'Tahoma'
+  Font.Style = []
+  OldCreateOrder = False
+  PixelsPerInch = 96
+  TextHeight = 13
+  object Panel1: TPanel
+    Left = 0
+    Top = 247
+    Width = 635
+    Height = 41
+    Align = alBottom
+    TabOrder = 0
+    ExplicitTop = 275
+    object cxButton1: TcxButton
+      Left = 368
+      Top = 8
+      Width = 75
+      Height = 25
+      Caption = 'Ekle'
+      TabOrder = 0
+    end
+    object cxButton2: TcxButton
+      Left = 456
+      Top = 8
+      Width = 75
+      Height = 25
+      Caption = 'Yazd'#305'r'
+      TabOrder = 1
+    end
+    object cxButton3: TcxButton
+      Left = 544
+      Top = 8
+      Width = 75
+      Height = 25
+      Caption = #199#305'k'#305#351
+      TabOrder = 2
+      OnClick = cxButton3Click
+    end
+  end
+end

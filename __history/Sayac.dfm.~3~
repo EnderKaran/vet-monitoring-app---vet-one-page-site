@@ -1,0 +1,36 @@
+object Form21: TForm21
+  Left = 0
+  Top = 0
+  Caption = 'Kronometre Alan'#305
+  ClientHeight = 300
+  ClientWidth = 635
+  Color = clBtnFace
+  Font.Charset = DEFAULT_CHARSET
+  Font.Color = clWindowText
+  Font.Height = -11
+  Font.Name = 'Tahoma'
+  Font.Style = []
+  OldCreateOrder = False
+  PixelsPerInch = 96
+  TextHeight = 13
+  object cxLabel1: TcxLabel
+    Left = 152
+    Top = 104
+    Caption = 'cxLabel1'
+  end
+  object cxLabel2: TcxLabel
+    Left = 256
+    Top = 104
+    Caption = 'cxLabel1'
+  end
+  object cxLabel3: TcxLabel
+    Left = 352
+    Top = 104
+    Caption = 'cxLabel1'
+  end
+  object cxLabel4: TcxLabel
+    Left = 464
+    Top = 104
+    Caption = 'cxLabel1'
+  end
+end

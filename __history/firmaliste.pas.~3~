@@ -1,0 +1,49 @@
+unit firmaliste;
+
+interface
+
+uses
+  Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
+  Dialogs, Grids, DBGrids, StdCtrls, DB, DBAccess, MyAccess, MemDS;
+
+type
+  TForm3 = class(TForm)
+    Label1: TLabel;
+    Button1: TButton;
+    DBGrid1: TDBGrid;
+    MyConnection1: TMyConnection;
+    MyQuery1: TMyQuery;
+    MyDataSource1: TMyDataSource;
+    procedure Button1Click(Sender: TObject);
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  Form3: TForm3;
+
+implementation
+
+{$R *.dfm}
+
+procedure TForm3.Button1Click(Sender: TObject);
+begin
+with MyConnection1 do
+  begin
+    with MyQuery1 do
+    begin
+      MyQuery1.Close;
+      MyQuery1.sql.clear;
+      MyQuery1.sql.add('SELECT * FROM tablo');
+      MyQuery1.open;
+      if RecordCount > 0 then
+      begin
+        ShowMessage('Veriler Listelendi');
+      end;
+    end;
+  end;
+end;
+
+end.

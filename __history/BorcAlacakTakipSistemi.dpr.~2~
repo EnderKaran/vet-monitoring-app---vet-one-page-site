@@ -1,0 +1,20 @@
+program BorcAlacakTakipSistemi;
+
+uses
+  Forms,
+  kullanicigiriss in 'kullanicigiriss.pas' {Form1},
+  mainn in 'mainn.pas' {Form2},
+  firma_islemlerii in 'firma_islemlerii.pas' {Form3},
+  firma_guncelleme in 'firma_guncelleme.pas' {Form4};
+
+{$R *.res}
+
+begin
+  Application.Initialize;
+  Application.MainFormOnTaskbar := True;
+  Application.CreateForm(TForm1, Form1);
+  Application.CreateForm(TForm2, Form2);
+  Application.CreateForm(TForm3, Form3);
+  Application.CreateForm(TForm4, Form4);
+  Application.Run;
+end.

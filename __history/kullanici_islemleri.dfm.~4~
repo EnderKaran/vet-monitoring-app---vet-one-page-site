@@ -1,0 +1,171 @@
+object Form5: TForm5
+  Left = 0
+  Top = 0
+  Caption = 'Form5'
+  ClientHeight = 277
+  ClientWidth = 391
+  Color = clBtnFace
+  Font.Charset = DEFAULT_CHARSET
+  Font.Color = clWindowText
+  Font.Height = -11
+  Font.Name = 'Tahoma'
+  Font.Style = []
+  OldCreateOrder = False
+  PixelsPerInch = 96
+  TextHeight = 13
+  object Label3: TLabel
+    Left = 172
+    Top = 131
+    Width = 55
+    Height = 13
+    Caption = 'Kullan'#305'c'#305' Ad'#305
+  end
+  object Label4: TLabel
+    Left = 172
+    Top = 171
+    Width = 69
+    Height = 13
+    Caption = 'Kullan'#305'c'#305' '#350'ifresi'
+  end
+  object DBGrid1: TDBGrid
+    Left = 0
+    Top = 0
+    Width = 153
+    Height = 236
+    Align = alLeft
+    DataSource = MyDataSource1
+    TabOrder = 0
+    TitleFont.Charset = DEFAULT_CHARSET
+    TitleFont.Color = clWindowText
+    TitleFont.Height = -11
+    TitleFont.Name = 'Tahoma'
+    TitleFont.Style = []
+  end
+  object Panel1: TPanel
+    Left = 0
+    Top = 236
+    Width = 391
+    Height = 41
+    Align = alBottom
+    Color = clSkyBlue
+    ParentBackground = False
+    TabOrder = 1
+    ExplicitLeft = 168
+    ExplicitTop = 112
+    ExplicitWidth = 185
+    object Button1: TButton
+      Left = 38
+      Top = 6
+      Width = 75
+      Height = 25
+      Caption = 'Sil'
+      TabOrder = 0
+    end
+    object Button2: TButton
+      Left = 207
+      Top = 6
+      Width = 75
+      Height = 25
+      Caption = 'Kaydet'
+      TabOrder = 1
+    end
+    object Button3: TButton
+      Left = 288
+      Top = 8
+      Width = 75
+      Height = 25
+      Caption = 'Kapat'
+      TabOrder = 2
+      OnClick = Button3Click
+    end
+    object Button4: TButton
+      Left = 126
+      Top = 6
+      Width = 75
+      Height = 25
+      Caption = 'Yeni'
+      TabOrder = 3
+    end
+  end
+  object Panel2: TPanel
+    Left = 151
+    Top = 0
+    Width = 244
+    Height = 73
+    Align = alCustom
+    Color = clSkyBlue
+    ParentBackground = False
+    TabOrder = 2
+    object Label1: TLabel
+      Left = 8
+      Top = 14
+      Width = 229
+      Height = 13
+      Caption = 'Not: Sol tarafdaki listeden kullan'#305'c'#305' se'#231'ip '
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -11
+      Font.Name = 'Tahoma'
+      Font.Style = [fsBold]
+      ParentFont = False
+    end
+    object Label2: TLabel
+      Left = 8
+      Top = 40
+      Width = 103
+      Height = 13
+      Caption = 'd'#252'zenliye bilirsiniz'
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -11
+      Font.Name = 'Tahoma'
+      Font.Style = [fsBold]
+      ParentFont = False
+    end
+  end
+  object Edit1: TEdit
+    Left = 247
+    Top = 128
+    Width = 121
+    Height = 21
+    TabOrder = 3
+  end
+  object Edit2: TEdit
+    Left = 247
+    Top = 168
+    Width = 121
+    Height = 21
+    TabOrder = 4
+  end
+  object MyConnection1: TMyConnection
+    Database = 'musteri'
+    Username = 'root'
+    Password = 'ender16'
+    Server = 'localhost'
+    Connected = True
+    Left = 320
+    Top = 64
+  end
+  object MyQuery1: TMyQuery
+    Connection = MyConnection1
+    SQL.Strings = (
+      'select * from kullanici')
+    Active = True
+    Left = 320
+    Top = 112
+    object MyQuery1P_kullanici_adi: TStringField
+      FieldName = 'P_kullanici_adi'
+      Origin = 'kullanici.P_kullanici_adi'
+      Size = 50
+    end
+    object MyQuery1P_kullanici_parola: TIntegerField
+      FieldName = 'P_kullanici_parola'
+      Origin = 'kullanici.P_kullanici_parola'
+    end
+  end
+  object MyDataSource1: TMyDataSource
+    DataSet = MyQuery1
+    Left = 320
+    Top = 176
+  end
+end

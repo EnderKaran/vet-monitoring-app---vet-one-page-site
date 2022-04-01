@@ -1,0 +1,70 @@
+unit konutdüzenlemee;
+
+interface
+
+uses
+  Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
+  Dialogs, DB, DBAccess, MyAccess, StdCtrls, Grids, DBGrids,datamodule;
+
+type
+  TForm5 = class(TForm)
+    Label1: TLabel;
+    Label2: TLabel;
+    Label3: TLabel;
+    Label4: TLabel;
+    Label5: TLabel;
+    Label6: TLabel;
+    DBGrid1: TDBGrid;
+    Edit1: TEdit;
+    Edit2: TEdit;
+    Edit3: TEdit;
+    Button1: TButton;
+    Button2: TButton;
+    Edit4: TEdit;
+    Button3: TButton;
+    DBGrid2: TDBGrid;
+    DBGrid3: TDBGrid;
+    MyDataSource1: TMyDataSource;
+    MyDataSource2: TMyDataSource;
+    MyDataSource3: TMyDataSource;
+    procedure Button1Click(Sender: TObject);
+    procedure Button3Click(Sender: TObject);
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  Form5: TForm5;
+
+implementation
+
+{$R *.dfm}
+
+procedure TForm5.Button1Click(Sender: TObject);
+begin
+DataModule1.KonutQuery1.SQL.Text:= 'UPDATE ev SET emlakNumarasi= :emlk, katNumarasi = :kts,evDurumu = :evd where id=:i';
+      DataModule1.KonutQuery1.ParamByName('i').AsString := Edit4.Text;
+      DataModule1.KonutQuery1.ParamByName('emlk').AsString := Edit1.Text;
+      DataModule1.KonutQuery1.ParamByName('kts').AsString := Edit2.Text;
+      DataModule1.KonutQuery1.ParamByName('evd').AsString := Edit3.Text;
+      DataModule1.KonutQuery1.Execute;
+end;
+
+procedure TForm5.Button3Click(Sender: TObject);
+begin
+with DataModule1.KonutQuery1 do
+    begin
+      DataModule1.KonutQuery1.close;
+      DataModule1.KonutQuery1.sql.clear;
+      DataModule1.KonutQuery1.sql.add('SELECT * FROM ev');
+      DataModule1.KonutQuery1.open;
+      if RecordCount > 0 then
+      begin
+        ShowMessage('Veriler Listelendi');
+      end;
+    end;
+end;
+
+end.

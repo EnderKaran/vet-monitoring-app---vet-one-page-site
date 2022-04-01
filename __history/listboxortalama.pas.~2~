@@ -1,0 +1,47 @@
+unit listboxortalama;
+
+interface
+
+uses
+  Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
+  Dialogs, StdCtrls;
+
+type
+  TForm1 = class(TForm)
+    Edit1: TEdit;
+    Button1: TButton;
+    ListBox1: TListBox;
+    Hesapla: TButton;
+    Label1: TLabel;
+    Label2: TLabel;
+    Edit2: TEdit;
+    Edit3: TEdit;
+    procedure Button1Click(Sender: TObject);
+    procedure HesaplaClick(Sender: TObject);
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  Form1: TForm1;
+
+implementation
+
+{$R *.dfm}
+
+procedure TForm1.Button1Click(Sender: TObject);
+begin
+ListBox1.Items.Add(Edit1.Text);
+end;
+
+procedure TForm1.HesaplaClick(Sender: TObject);
+var
+x,i:integer;
+t,stdev,toplam,mean:real;
+begin
+
+end;
+
+end.

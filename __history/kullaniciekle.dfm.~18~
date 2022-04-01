@@ -1,0 +1,70 @@
+object Form3: TForm3
+  Left = 0
+  Top = 0
+  Caption = 'Kullan'#305'c'#305' Ekle'
+  ClientHeight = 204
+  ClientWidth = 389
+  Color = clBtnFace
+  Font.Charset = DEFAULT_CHARSET
+  Font.Color = clWindowText
+  Font.Height = -11
+  Font.Name = 'Tahoma'
+  Font.Style = []
+  OldCreateOrder = False
+  PixelsPerInch = 96
+  TextHeight = 13
+  object cxLabel1: TcxLabel
+    Left = 48
+    Top = 32
+    Caption = 'Kullan'#305'c'#305' Ad'#305
+    ParentFont = False
+    Style.Font.Charset = DEFAULT_CHARSET
+    Style.Font.Color = clWindowText
+    Style.Font.Height = -17
+    Style.Font.Name = 'Tahoma'
+    Style.Font.Style = []
+    Style.IsFontAssigned = True
+  end
+  object cxLabel2: TcxLabel
+    Left = 48
+    Top = 80
+    Caption = #350'ifre'
+    ParentFont = False
+    Style.Font.Charset = DEFAULT_CHARSET
+    Style.Font.Color = clWindowText
+    Style.Font.Height = -17
+    Style.Font.Name = 'Tahoma'
+    Style.Font.Style = []
+    Style.IsFontAssigned = True
+  end
+  object cxDBTextEdit1: TcxDBTextEdit
+    Left = 160
+    Top = 37
+    TabOrder = 2
+    Width = 177
+  end
+  object cxDBTextEdit2: TcxDBTextEdit
+    Left = 160
+    Top = 85
+    TabOrder = 3
+    Width = 177
+  end
+  object cxButton1: TcxButton
+    Left = 48
+    Top = 120
+    Width = 289
+    Height = 25
+    Caption = 'Ekle'
+    TabOrder = 4
+    OnClick = cxButton1Click
+  end
+  object cxButton2: TcxButton
+    Left = 306
+    Top = 171
+    Width = 75
+    Height = 25
+    Caption = #199#305'k'#305#351
+    TabOrder = 5
+    OnClick = cxButton2Click
+  end
+end

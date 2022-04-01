@@ -1,0 +1,42 @@
+unit veritabanýislemleri;
+
+interface
+
+uses
+  Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
+  Dialogs, StdCtrls, ExtCtrls, DB, Grids, DBGrids, DBCtrls, MemDS, DBAccess,
+  MyAccess;
+
+type
+  TForm1 = class(TForm)
+    MyConnection1: TMyConnection;
+    MyQuery1: TMyQuery;
+    MyQuery1id: TIntegerField;
+    MyQuery1ad: TStringField;
+    MyQuery1soyadi: TStringField;
+    DBNavigator1: TDBNavigator;
+    DBGrid1: TDBGrid;
+    DataSource1: TDataSource;
+    Panel1: TPanel;
+    Button1: TButton;
+    procedure Button1Click(Sender: TObject);
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  Form1: TForm1;
+
+implementation
+
+{$R *.dfm}
+
+procedure TForm1.Button1Click(Sender: TObject);
+begin
+MyConnection1.Open();
+MyQuery1.Open();
+end;
+
+end.

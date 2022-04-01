@@ -1,0 +1,29 @@
+unit receteokuma;
+
+interface
+
+uses
+  Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
+  Dialogs, StdCtrls, DB, MemDS, DBAccess, MyAccess, frxClass, frxDBSet;
+
+type
+  TForm7 = class(TForm)
+    frxReport1: TfrxReport;
+    frxDBDataset1: TfrxDBDataset;
+    MyConnection1: TMyConnection;
+    MyQuery1: TMyQuery;
+    Button1: TButton;
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  Form7: TForm7;
+
+implementation
+
+{$R *.dfm}
+
+end.

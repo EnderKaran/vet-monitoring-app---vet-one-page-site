@@ -1,0 +1,76 @@
+unit firmaguncelle;
+
+interface
+
+uses
+  Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
+  Dialogs, StdCtrls, ExtCtrls, Grids, DBGrids, DB, DBAccess, MyAccess, MemDS;
+
+type
+  TForm4 = class(TForm)
+    Label1: TLabel;
+    Label2: TLabel;
+    Label3: TLabel;
+    Label4: TLabel;
+    Label5: TLabel;
+    Label6: TLabel;
+    Label7: TLabel;
+    Edit1: TEdit;
+    Edit2: TEdit;
+    Edit3: TEdit;
+    Edit4: TEdit;
+    Edit5: TEdit;
+    ComboBox1: TComboBox;
+    DBGrid1: TDBGrid;
+    Panel1: TPanel;
+    Button1: TButton;
+    Button2: TButton;
+    Button3: TButton;
+    MyConnection1: TMyConnection;
+    MyQuery1: TMyQuery;
+    MyDataSource1: TMyDataSource;
+    MyQuery1firma_no: TIntegerField;
+    MyQuery1ad: TStringField;
+    MyQuery1sehir: TStringField;
+    MyQuery1faks_no: TIntegerField;
+    MyQuery1vergi_no: TIntegerField;
+    MyQuery1sirket_durumu: TStringField;
+    procedure Button2Click(Sender: TObject);
+    procedure Button3Click(Sender: TObject);
+    procedure Button1Click(Sender: TObject);
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  Form4: TForm4;
+
+implementation
+
+{$R *.dfm}
+procedure TForm4.Button1Click(Sender: TObject);
+begin
+MyQuery1.SQL.Text:= 'UPDATE firma SET ad= :ad, sehir = :sehir,faks_no = :faks_no,vergi_no = :vergi_no,sirket_durumu = :sirket_durumu where firma_no=:i';
+      MyQuery1.ParamByName('firma_no').AsString := Edit1.Text;
+      MyQuery1.ParamByName('ad').AsString := cxTextEdit7.Text;
+      MyQuery1.ParamByName('sehir').AsString := cxTextEdit8.Text;
+      MyQuery1.ParamByName('faks_no').AsString := cxTextEdit9.Text;
+      MyQuery1.ParamByName('vergi_no').AsString := cxTextEdit9.Text;
+      MyQuery1.ParamByName('sirket_durumu').AsString := cxTextEdit9.Text;
+ShowMessage('Veriler Baþarýyla Güncellendi');
+      MyQuery1.Execute;
+end;
+procedure TForm4.Button2Click(Sender: TObject);
+begin
+Application.Terminate;
+end;
+
+procedure TForm4.Button3Click(Sender: TObject);
+begin
+MyConnection1.Open();
+MyQuery1.Open();
+end;
+
+end.

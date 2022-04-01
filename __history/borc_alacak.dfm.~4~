@@ -1,0 +1,164 @@
+﻿object Form6: TForm6
+  Left = 0
+  Top = 0
+  Caption = 'Form6'
+  ClientHeight = 285
+  ClientWidth = 346
+  Color = clBtnFace
+  Font.Charset = DEFAULT_CHARSET
+  Font.Color = clWindowText
+  Font.Height = -11
+  Font.Name = 'Tahoma'
+  Font.Style = []
+  OldCreateOrder = False
+  PixelsPerInch = 96
+  TextHeight = 13
+  object Label2: TLabel
+    Left = 32
+    Top = 80
+    Width = 24
+    Height = 13
+    Caption = 'Tarih'
+  end
+  object Label3: TLabel
+    Left = 32
+    Top = 120
+    Width = 41
+    Height = 13
+    Caption = 'A'#231#305'klama'
+  end
+  object Label4: TLabel
+    Left = 32
+    Top = 159
+    Width = 30
+    Height = 13
+    Caption = #214'zellik'
+  end
+  object Label5: TLabel
+    Left = 32
+    Top = 192
+    Width = 26
+    Height = 13
+    Caption = 'Tutar'
+  end
+  object Panel1: TPanel
+    Left = 0
+    Top = 0
+    Width = 346
+    Height = 41
+    Align = alTop
+    Color = clActiveBorder
+    ParentBackground = False
+    TabOrder = 0
+    ExplicitLeft = 88
+    ExplicitTop = 152
+    ExplicitWidth = 185
+    object Label1: TLabel
+      Left = 80
+      Top = 12
+      Width = 205
+      Height = 16
+      Caption = 'M'#252#351'teri Borr'#231' Alacak '#304#351'leme B'#246'l'#252'm'#252
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -13
+      Font.Name = 'Tahoma'
+      Font.Style = []
+      ParentFont = False
+    end
+  end
+  object Panel2: TPanel
+    Left = 0
+    Top = 244
+    Width = 346
+    Height = 41
+    Align = alBottom
+    Color = clSilver
+    ParentBackground = False
+    TabOrder = 1
+    ExplicitLeft = 72
+    ExplicitTop = 216
+    ExplicitWidth = 185
+    object Button1: TButton
+      Left = 183
+      Top = 8
+      Width = 75
+      Height = 25
+      Caption = 'Kaydet'
+      TabOrder = 0
+      OnClick = Button1Click
+    end
+    object Button2: TButton
+      Left = 264
+      Top = 8
+      Width = 75
+      Height = 25
+      Caption = 'Kapat'
+      TabOrder = 1
+      OnClick = Button2Click
+    end
+  end
+  object Edit1: TEdit
+    Left = 80
+    Top = 77
+    Width = 121
+    Height = 21
+    TabOrder = 2
+  end
+  object Edit2: TEdit
+    Left = 80
+    Top = 117
+    Width = 121
+    Height = 21
+    TabOrder = 3
+  end
+  object Edit3: TEdit
+    Left = 80
+    Top = 189
+    Width = 121
+    Height = 21
+    TabOrder = 4
+  end
+  object ComboBox1: TComboBox
+    Left = 80
+    Top = 156
+    Width = 145
+    Height = 21
+    ItemHeight = 13
+    TabOrder = 5
+    Items.Strings = (
+      'gider'
+      'gelir')
+  end
+  object MyConnection1: TMyConnection
+    Database = 'musteri'
+    Username = 'root'
+    Password = 'ender16'
+    Server = 'localhost'
+    Connected = True
+    Left = 280
+    Top = 88
+  end
+  object MyQuery1: TMyQuery
+    Connection = MyConnection1
+    SQL.Strings = (
+      'select * from borc')
+    Left = 280
+    Top = 144
+    object MyQuery1tarih: TStringField
+      FieldName = 'tarih'
+      Size = 50
+    end
+    object MyQuery1aciklama: TStringField
+      FieldName = 'aciklama'
+      Size = 50
+    end
+    object MyQuery1özellik: TStringField
+      FieldName = #246'zellik'
+      Size = 50
+    end
+    object MyQuery1Tutar: TIntegerField
+      FieldName = 'Tutar'
+    end
+  end
+end

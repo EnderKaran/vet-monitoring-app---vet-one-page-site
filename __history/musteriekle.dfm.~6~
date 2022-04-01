@@ -1,0 +1,90 @@
+object Form8: TForm8
+  Left = 0
+  Top = 0
+  Caption = 'M'#252#351'teri Ekle K'#305'sm'#305
+  ClientHeight = 322
+  ClientWidth = 635
+  Color = clBtnFace
+  Font.Charset = DEFAULT_CHARSET
+  Font.Color = clWindowText
+  Font.Height = -11
+  Font.Name = 'Tahoma'
+  Font.Style = []
+  OldCreateOrder = False
+  PixelsPerInch = 96
+  TextHeight = 13
+  object Panel1: TPanel
+    Left = 0
+    Top = 281
+    Width = 635
+    Height = 41
+    Align = alBottom
+    TabOrder = 0
+    ExplicitTop = 275
+    object cxButton1: TcxButton
+      Left = 368
+      Top = 8
+      Width = 75
+      Height = 25
+      Caption = 'Ekle'
+      TabOrder = 0
+    end
+    object cxButton2: TcxButton
+      Left = 456
+      Top = 8
+      Width = 75
+      Height = 25
+      Caption = 'Yazd'#305'r'
+      TabOrder = 1
+    end
+    object cxButton3: TcxButton
+      Left = 544
+      Top = 8
+      Width = 75
+      Height = 25
+      Caption = #199#305'k'#305#351
+      TabOrder = 2
+      OnClick = cxButton3Click
+    end
+  end
+  object cxLabel1: TcxLabel
+    Left = 40
+    Top = 32
+    Caption = 'Ad'#305
+  end
+  object cxLabel2: TcxLabel
+    Left = 40
+    Top = 80
+    Caption = 'Soyad'#305
+  end
+  object cxLabel3: TcxLabel
+    Left = 352
+    Top = 80
+    Caption = 'Ya'#351#305
+  end
+  object cxLabel4: TcxLabel
+    Left = 352
+    Top = 32
+    Caption = 'Telefon No'
+  end
+  object cxLabel5: TcxLabel
+    Left = 40
+    Top = 128
+    Caption = #350'ehir'
+  end
+  object cxLabel6: TcxLabel
+    Left = 352
+    Top = 128
+    Caption = 'Adres'
+  end
+  object cxLabel7: TcxLabel
+    Left = 40
+    Top = 184
+    Caption = 'E-Mail'
+  end
+  object cxLabel8: TcxLabel
+    Left = 352
+    Top = 184
+    Caption = 'Cinsiyet'
+  end
+end

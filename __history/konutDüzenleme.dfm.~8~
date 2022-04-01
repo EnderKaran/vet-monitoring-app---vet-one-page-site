@@ -1,0 +1,160 @@
+﻿object Form5: TForm5
+  Left = 0
+  Top = 0
+  Caption = 'Konut D'#252'zenleme'
+  ClientHeight = 287
+  ClientWidth = 441
+  Color = clBtnFace
+  Font.Charset = DEFAULT_CHARSET
+  Font.Color = clWindowText
+  Font.Height = -11
+  Font.Name = 'Tahoma'
+  Font.Style = []
+  OldCreateOrder = False
+  PixelsPerInch = 96
+  TextHeight = 13
+  object Label1: TLabel
+    Left = 8
+    Top = 64
+    Width = 70
+    Height = 13
+    Caption = 'Emlak Numar'#305's'#305
+  end
+  object Label2: TLabel
+    Left = 19
+    Top = 99
+    Width = 59
+    Height = 13
+    Caption = 'Kat Numar'#305's'#305
+  end
+  object Label3: TLabel
+    Left = 26
+    Top = 126
+    Width = 52
+    Height = 13
+    Caption = 'Ev Durumu'
+  end
+  object Label4: TLabel
+    Left = 56
+    Top = 35
+    Width = 11
+    Height = 13
+    Caption = #304'D'
+  end
+  object Label5: TLabel
+    Left = 32
+    Top = 168
+    Width = 6
+    Height = 13
+    Caption = #304'l'
+  end
+  object Label6: TLabel
+    Left = 152
+    Top = 166
+    Width = 29
+    Height = 13
+    Caption = #304'lceler'
+  end
+  object DBGrid1: TDBGrid
+    Left = 0
+    Top = 194
+    Width = 441
+    Height = 93
+    Align = alBottom
+    DataSource = MyDataSource1
+    TabOrder = 0
+    TitleFont.Charset = DEFAULT_CHARSET
+    TitleFont.Color = clWindowText
+    TitleFont.Height = -11
+    TitleFont.Name = 'Tahoma'
+    TitleFont.Style = []
+  end
+  object Edit1: TEdit
+    Left = 104
+    Top = 61
+    Width = 121
+    Height = 21
+    TabOrder = 1
+  end
+  object Edit2: TEdit
+    Left = 104
+    Top = 96
+    Width = 121
+    Height = 21
+    TabOrder = 2
+  end
+  object Edit3: TEdit
+    Left = 104
+    Top = 123
+    Width = 121
+    Height = 21
+    TabOrder = 3
+  end
+  object Button1: TButton
+    Left = 241
+    Top = 32
+    Width = 89
+    Height = 80
+    Caption = 'D'#252'zenle'
+    TabOrder = 4
+    OnClick = Button1Click
+  end
+  object Button2: TButton
+    Left = 342
+    Top = 161
+    Width = 75
+    Height = 25
+    Caption = #199#305'k'#305#351' Yap'
+    TabOrder = 5
+    OnClick = Button2Click
+  end
+  object Edit4: TEdit
+    Left = 104
+    Top = 32
+    Width = 121
+    Height = 21
+    TabOrder = 6
+  end
+  object Button3: TButton
+    Left = 336
+    Top = 32
+    Width = 81
+    Height = 80
+    Caption = 'Listele'
+    TabOrder = 7
+    OnClick = Button3Click
+  end
+  object DBListBox1: TDBListBox
+    Left = 56
+    Top = 161
+    Width = 81
+    Height = 20
+    DataSource = MyDataSource2
+    ItemHeight = 13
+    TabOrder = 8
+  end
+  object DBListBox2: TDBListBox
+    Left = 200
+    Top = 160
+    Width = 89
+    Height = 19
+    DataSource = MyDataSource3
+    ItemHeight = 13
+    TabOrder = 9
+  end
+  object MyDataSource1: TMyDataSource
+    DataSet = DataModule1.KonutQuery1
+    Left = 384
+    Top = 224
+  end
+  object MyDataSource2: TMyDataSource
+    DataSet = DataModule1.İlQuery1
+    Left = 248
+    Top = 240
+  end
+  object MyDataSource3: TMyDataSource
+    DataSet = DataModule1.İlceQuery1
+    Left = 304
+    Top = 200
+  end
+end

@@ -1,0 +1,72 @@
+unit borc_alacak;
+
+interface
+
+uses
+  Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
+  Dialogs, StdCtrls, ExtCtrls, DB, MemDS, DBAccess, MyAccess;
+
+type
+  TForm6 = class(TForm)
+    Panel1: TPanel;
+    Panel2: TPanel;
+    Label1: TLabel;
+    Label2: TLabel;
+    Label3: TLabel;
+    Label4: TLabel;
+    Label5: TLabel;
+    Edit1: TEdit;
+    Edit2: TEdit;
+    Edit3: TEdit;
+    ComboBox1: TComboBox;
+    Button1: TButton;
+    Button2: TButton;
+    MyConnection1: TMyConnection;
+    MyQuery1: TMyQuery;
+    MyQuery1tarih: TStringField;
+    MyQuery1aciklama: TStringField;
+    MyQuery1özellik: TStringField;
+    MyQuery1Tutar: TIntegerField;
+    procedure Button2Click(Sender: TObject);
+    procedure Button1Click(Sender: TObject);
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  Form6: TForm6;
+
+implementation
+
+{$R *.dfm}
+
+procedure TForm6.Button1Click(Sender: TObject);
+begin
+with MyConnection1 do
+  begin
+    try
+      MyQuery1.close;
+      MyQuery1.sql.clear;
+      MyQuery1.sql.Text :=
+      'INSERT INTO tablo(id,ad,soyad,aciklama) VALUES(:id,:ad,:soyad,:aciklama)';
+      MyQuery1.ParamByName('id').Value := cxTextEdit5.Text;
+      MyQuery1.ParamByName('ad').Value := cxTextEdit1.Text;
+      MyQuery1.ParamByName('soyad').Value := cxTextEdit2.Text;  //soyadýn hangi edit tarafýndan deðiþtireliceðini belirtiyor
+      MyQuery1.ParamByName('aciklama').Value := cxTextEdit3.Text;
+      ShowMessage('Veriler Eklendi');
+      MyQuery1.Execute;
+
+    finally
+      MyQuery1.sql.add('SELECT * FROM tablo');
+    end;
+  end;
+end;
+
+procedure TForm6.Button2Click(Sender: TObject);
+begin
+Application.Terminate;
+end;
+
+end.

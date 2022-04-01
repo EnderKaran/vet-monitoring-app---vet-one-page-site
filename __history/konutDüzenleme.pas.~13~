@@ -1,0 +1,53 @@
+unit konutDüzenleme;
+
+interface
+
+uses
+  Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
+  Dialogs, DB, DBAccess, MyAccess, Grids, DBGrids,datamodule, StdCtrls;
+
+type
+  TForm5 = class(TForm)
+    DBGrid1: TDBGrid;
+    MyDataSource1: TMyDataSource;
+    Edit1: TEdit;
+    Edit2: TEdit;
+    Edit3: TEdit;
+    Button1: TButton;
+    Button2: TButton;
+    Label1: TLabel;
+    Label2: TLabel;
+    Label3: TLabel;
+    Edit4: TEdit;
+    Label4: TLabel;
+    procedure Button2Click(Sender: TObject);
+    procedure Button1Click(Sender: TObject);
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  Form5: TForm5;
+
+implementation
+
+{$R *.dfm}
+
+procedure TForm5.Button1Click(Sender: TObject);
+begin
+DataModule1.KonutQuery1.SQL.Text:= 'UPDATE ev SET emlakNumarasi= :emlk, katNumarasi = :kts,evDurumu = :evd where id=:i';
+      DataModule1.KonutQuery1.ParamByName('i').AsString := Edit4.Text;
+      DataModule1.KonutQuery1.ParamByName('emlk').AsString := Edit1.Text;
+      DataModule1.KonutQuery1.ParamByName('kts').AsString := Edit2.Text;
+      DataModule1.KonutQuery1.ParamByName('evd').AsString := Edit3.Text;
+      DataModule1.KonutQuery1.Execute;
+end;
+
+procedure TForm5.Button2Click(Sender: TObject);
+begin
+Application.Terminate;
+end;
+
+end.
